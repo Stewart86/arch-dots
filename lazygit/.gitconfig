@@ -1,0 +1,12 @@
+[commit]
+  gpgsign = true
+[gpg]
+  format = "ssh"
+[init]
+  defaultBranch = "main"
+[pull]
+  rebase = false
+[user]
+  email = "siwei.wong@gmail.com"
+  name = "stewart86"
+  signingKey = "~/.ssh/github.pub"
