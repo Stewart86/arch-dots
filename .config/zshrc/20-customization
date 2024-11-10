@@ -12,16 +12,21 @@ POSH=agnoster
 # oh-myzsh plugins
 # -----------------------------------------------------
 plugins=(
-    git
-    sudo
-    web-search
     archlinux
+    aws
+    copybuffer
+    copyfile
+    dirhistory
+    fast-syntax-highlighting
+    git
+    gh
+    poetry
+    poetry-env
+    sudo
+    virtualenv
+    web-search
     zsh-autosuggestions
     zsh-syntax-highlighting
-    fast-syntax-highlighting
-    copyfile
-    copybuffer
-    dirhistory
 )
 
 # Set-up oh-my-zsh
