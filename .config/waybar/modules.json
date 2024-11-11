@@ -206,7 +206,7 @@
 
   // Clock
   "clock": {
-        "format": "{:%H:%M - %Od.%Om.%y}",
+        "format": "{:%a, %d %b @ %H:%M}",
     "on-click": "ags -t calendar",
     "tooltip": false
   },
