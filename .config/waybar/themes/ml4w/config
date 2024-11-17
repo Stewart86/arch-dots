@@ -13,7 +13,6 @@
     "layer": "top",
     "margin-top": 14,
     "margin-bottom": 0,
-    "layer": "top",
     "margin-left": 14,
     "margin-right": 14,    
     "spacing": 0,
@@ -28,10 +27,10 @@
     "modules-left": [
 "custom/appmenu",
         "group/links",
-        //"group/settings",
-        "wlr/taskbar",
-        //"group/quicklinks",
-        "hyprland/window",
+//"group/settings",
+"wlr/taskbar",
+        "group/quicklinks",
+"hyprland/window",
         "custom/empty"
     ],
 
@@ -47,7 +46,7 @@
 //"backlight",
         "bluetooth",
         "battery", 
-        "network",
+"network",
         "group/hardware",
         "group/tools",
 "tray",

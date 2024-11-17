@@ -14,6 +14,7 @@ return {
   { import = "astrocommunity.markdown-and-latex.markview-nvim" },
 
   { import = "astrocommunity.lsp.lsp-lens-nvim" },
+  { import = "astrocommunity.recipes.telescope-lsp-mappings" },
 
   { import = "astrocommunity.motion.nvim-surround" },
 
