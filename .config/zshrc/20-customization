@@ -18,8 +18,9 @@ plugins=(
     copyfile
     dirhistory
     fast-syntax-highlighting
-    git
+    fnm
     gh
+    git
     poetry
     poetry-env
     sudo
