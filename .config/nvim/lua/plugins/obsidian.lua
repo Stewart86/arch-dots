@@ -9,7 +9,7 @@ return {
     workspaces = {
       {
         name = "notes",
-        path = "~/Documents/Notes",
+        path = "~/Documents/Notes/",
       },
     },
 
@@ -31,10 +31,28 @@ return {
         action = function() return require("obsidian").util.toggle_checkbox() end,
         opts = { buffer = true },
       },
+
+      -- list daily notes
+      ["<leader>al"] = {
+        action = "<cmd>ObsidianDailies<cr>",
+        desc = "List daily notes",
+      },
+
+      -- create today daily note
+      ["<leader>at"] = {
+        action = "<cmd>ObsidianToday<cr>",
+        desc = "Today's note",
+      },
+
+      -- create tomorrow daily note
+      ["<leader>am"] = {
+        action = "<cmd>ObsidianTomorrow<cr>",
+        desc = "Tomorrow's note",
+      },
     },
 
     ui = {
-      enable = true, -- set to false to disable all additional syntax features
+      enable = false, -- set to false to disable all additional syntax features
       update_debounce = 200, -- update delay after a text change (in milliseconds)
       -- Define how various check-boxes are displayed
       checkboxes = {

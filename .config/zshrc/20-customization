@@ -60,3 +60,16 @@ function y() {
 	fi
 	rm -f -- "$tmp"
 }
+
+function otp() {
+    if [ "$1" = "aws" ]; then
+        echo "Getting Ample Transfers AWS MFA.."
+        local result="$(bw get totp 94b0901d-af45-4dff-9d5a-8adb9032586d)"
+    else
+        echo "try getting OTP for $1"
+        local result="$(bw get totp $1)"
+    fi
+    notify-send "$result copied to clipboard."
+    echo "$result"
+    wl-copy $result
+}
