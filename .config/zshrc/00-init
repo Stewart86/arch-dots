@@ -8,5 +8,8 @@
 export EDITOR=nvim
 export PATH="/usr/lib/ccache/bin/:$PATH"
 export ZSH="$HOME/.oh-my-zsh"
-
 eval "$(zoxide init zsh --cmd cd)"
+
+# Temporary fix for Python requests module for httpie v3.2.3
+# to try without this after version upgrade
+export REQUESTS_CA_BUNDLE="/etc/ssl/certs/ca-bundle.crt"
