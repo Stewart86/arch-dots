@@ -60,7 +60,7 @@
         //"custom/appmenuicon",
         "hyprland/workspaces",
         "group/links",
-//"group/settings",
+        "group/settings",
         "group/quicklinks",
         "custom/empty"
     ],

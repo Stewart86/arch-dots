@@ -1,1 +1,1 @@
-/ml4w;/ml4w/colored
+/sw-minimal;/sw-minimal

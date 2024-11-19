@@ -20,7 +20,7 @@
       "default": ""
     },
     "persistent-workspaces": {
-      "*": 3
+            "*": 2
     }
   },
 
@@ -70,6 +70,7 @@
   "custom/tools": {
     "format": "",
     "tooltip-format": "Tools"
+     
   },
 
   // Cliphist
@@ -263,7 +264,7 @@
     "modules": [
       "custom/tools",
       "custom/cliphist",
-      //"custom/hypridle",
+      "custom/hypridle",
       "custom/hyprshade"
     ]
   },
@@ -272,7 +273,7 @@
   "group/links": {
     "orientation": "horizontal",
     "modules": [
-      //"custom/chatgpt",
+//      "custom/chatgpt",
       "custom/empty"      
     ]
   },
