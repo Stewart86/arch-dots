@@ -18,8 +18,8 @@
   "spacing": 0,
   // Load Modules
   "include": [
-    "~/.config/ml4w/settings/waybar-quicklinks.json",
-    "~/.config/waybar/modules.json"
+    "~/.config/ml4w/settings/waybar-quicklinks.jsonc",
+    "~/.config/waybar/modules.jsonc"
   ],
   // Modules Left
   "modules-left": [
@@ -32,7 +32,9 @@
     "custom/empty"
   ],
   // Modules Center
-  "modules-center": ["hyprland/workspaces"],
+  "modules-center": [
+    "hyprland/workspaces"
+  ],
   // Modules Right
   "modules-right": [
     "custom/updates",
@@ -47,5 +49,5 @@
     "custom/exit",
     //"custom/ml4w-welcome",
     "clock"
-  ],
+  ]
 }
