@@ -5,18 +5,6 @@
     "keybind" : "l"
 }
 {
-    "label" : "hibernate",
-    "action" : "~/.config/hypr/scripts/power.sh hibernate",
-    "text" : "Hibernate",
-    "keybind" : "h"
-}
-{
-    "label" : "logout",
-    "action" : "~/.config/hypr/scripts/power.sh exit",
-    "text" : "Exit",
-    "keybind" : "e"
-}
-{
     "label" : "shutdown",
     "action" : "~/.config/hypr/scripts/power.sh shutdown",
     "text" : "Shutdown",

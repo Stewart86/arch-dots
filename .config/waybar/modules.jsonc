@@ -149,7 +149,7 @@
   // Power Menu
   "custom/exit": {
     "format": "",
-    "on-click": "wlogout",
+    "on-click": "wlogout -b 2",
     "tooltip-format": "Power Menu"
   },
   // Hyprshade
