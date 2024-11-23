@@ -12,7 +12,7 @@
 }
 {
     "label" : "suspend",
-    "action" : "~/.config/hypr/scripts/power.sh suspend",
+    "action" : "hyprctl dpms off",
     "text" : "Suspend",
     "keybind" : "u"
 }
