@@ -1,70 +1,63 @@
 {
-    "layer": "top",
-    "position": "top",
-    "margin-bottom": 0,
-    "margin-left": 0,
-    "margin-right": 0,
-    "spacing": 0,
-    "include": [
-        "~/.config/ml4w/settings/waybar-quicklinks.jsonc",
-        "~/.config/waybar/modules.jsonc"
-    ],
-    "custom/updates": {
-        "format": "   {}",
-        "escape": true,
-        "return-type": "json",
-        "exec": "~/.config/ml4w/scripts/updates.sh",
-        "restart-interval": 60,
-        "on-click": "$(cat ~/.config/ml4w/settings/terminal.sh) --class dotfiles-floating -e ~/.config/ml4w/scripts/installupdates.sh",
-        "on-click-right": "~/.config/ml4w/settings/software.sh"
+  "layer": "top",
+  "position": "top",
+  "margin-bottom": 0,
+  "margin-left": 0,
+  "margin-right": 0,
+  "spacing": 0,
+  "include": [
+    "~/.config/ml4w/settings/waybar-quicklinks.jsonc",
+    "~/.config/waybar/modules.jsonc"
+  ],
+  "custom/updates": {
+    "format": "   {}",
+    "escape": true,
+    "return-type": "json",
+    "exec": "~/.config/ml4w/scripts/updates.sh",
+    "restart-interval": 60,
+    "on-click": "$(cat ~/.config/ml4w/settings/terminal.sh) --class dotfiles-floating -e ~/.config/ml4w/scripts/installupdates.sh",
+    "on-click-right": "~/.config/ml4w/settings/software.sh"
+  },
+  "pulseaudio": {
+    // "scroll-step": 1, // %, can be a float
+    "format": "{icon}   {volume}%",
+    "format-bluetooth": "{volume}% {icon} {format_source}",
+    "format-bluetooth-muted": " {icon} {format_source}",
+    "format-muted": " {format_source}",
+    "format-source": "",
+    "format-source-muted": "",
+    "format-icons": {
+      "headphone": " ",
+      "hands-free": " ",
+      "headset": " ",
+      "phone": " ",
+      "portable": " ",
+      "car": " ",
+      "default": ["", "", ""]
     },
-    "pulseaudio": {
-        // "scroll-step": 1, // %, can be a float
-        "format": "{icon} {volume}%",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
-        "format-source": "",
-        "format-source-muted": "",
-        "format-icons": {
-            "headphone": " ",
-            "hands-free": " ",
-            "headset": " ",
-            "phone": " ",
-            "portable": " ",
-            "car": " ",
-            "default": [
-                " ",
-                " ",
-                " "
-            ]
-        },
-        "on-click": "pamixer -t",
-        "on-click-right": "pavucontrol"
-    },
-    "tray": {
-        "icon-size": 14,
-        "spacing": 10
-    },
-    "modules-left": [
-        "custom/appmenuicon",
-        "hyprland/workspaces",
-        "group/links",
-        "group/settings",
-        "group/quicklinks",
-        "custom/empty"
-    ],
-    "modules-center": [
-        "hyprland/window",
-        "custom/empty"
-    ],
-    "modules-right": [
-        "custom/updates",
-        "pulseaudio",
-        "group/hardware",
-        "group/tools",
-        "custom/exit",
-        "tray",
-        "clock"
-    ]
+    "on-click": "pamixer -t",
+    "on-click-right": "pavucontrol"
+  },
+  "tray": {
+    "icon-size": 14,
+    "spacing": 10
+  },
+  "modules-left": [
+    "custom/appmenuicon",
+    "hyprland/workspaces",
+    "group/links",
+    "group/settings",
+    "group/quicklinks",
+    "custom/empty"
+  ],
+  "modules-center": ["hyprland/window", "custom/empty"],
+  "modules-right": [
+    "custom/updates",
+    "pulseaudio",
+    "group/hardware",
+    "group/tools",
+    "custom/exit",
+    "tray",
+    "clock"
+  ]
 }

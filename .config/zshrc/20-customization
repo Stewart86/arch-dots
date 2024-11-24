@@ -79,3 +79,11 @@ function uhypr() {
         exec uwsm start hyprland.desktop
     fi
 }
+
+function csv() {
+    if [ -z "$1" ]; then
+        echo "Usage: csv <file>"
+        return 1
+    fi
+    column -s, -t < "$1" | less -#2 -N -S
+}
