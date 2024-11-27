@@ -35,6 +35,7 @@ application/ogg=mplayer.desktop
 audio/x-flac=mplayer.desktop
 audio/mp4=mplayer.desktop
 application/x-flash-video=mplayer.desktop
+x-scheme-handler/mailspring=Mailspring.desktop
 
 [Added Associations]
 application/pdf=org.gnome.Evince.desktop;
