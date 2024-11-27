@@ -24,7 +24,7 @@ plugins=(
     poetry
     poetry-env
     sudo
-    virtualenv
+    #virtualenv
     web-search
     zsh-autosuggestions
     zsh-syntax-highlighting
