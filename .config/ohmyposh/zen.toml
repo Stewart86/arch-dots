@@ -26,7 +26,7 @@ final_space = true
 
     [blocks.segments.properties]
       cache_duration = 'none'
-      style = 'full'
+      style = 'mixed'
 
   [[blocks.segments]]
     template = ' {{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed) }}*{{ end }} <cyan>{{ if gt .Behind 0 }}⇣{{ end }}{{ if gt .Ahead 0 }}⇡{{ end }}</>'
@@ -36,9 +36,7 @@ final_space = true
     style = 'plain'
 
     [blocks.segments.properties]
-      branch_icon = ''
       cache_duration = 'none'
-      commit_icon = '@'
       fetch_status = true
 
 [[blocks]]
@@ -55,6 +53,17 @@ final_space = true
     [blocks.segments.properties]
       cache_duration = 'none'
       threshold = 5000
+
+  [[blocks.segments]]
+    type = 'python'
+    style = 'plain'
+    template = "  {{ .Full }} {{ if .Venv }}({{ .Venv }}){{ end }}"
+
+  [[blocks.segments]]
+    type = 'node'
+    style = 'plain'
+    fetch_package_manager = true
+    template = "  {{ .Full }} {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}"
 
 [[blocks]]
   type = 'prompt'
