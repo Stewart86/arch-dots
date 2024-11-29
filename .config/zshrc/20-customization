@@ -85,5 +85,5 @@ function csv() {
         echo "Usage: csv <file>"
         return 1
     fi
-    column -s, -t < "$1" | less -#2 -N -S
+    gum table -p -s, -brounded < "$1" | less -#2 -N -S
 }
