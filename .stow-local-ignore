@@ -1,0 +1,5 @@
+^/packages
+^/sddm-sequoia
+/helper.sh
+/install.sh
+/setup.sh
