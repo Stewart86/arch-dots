@@ -80,6 +80,13 @@ function uhypr() {
     fi
 }
 
+function reset_hyprlock() {
+    killall -9 hyprlock
+    hyprctl --instance 0 'keyword misc:allow_session_lock_restore 1'
+    sleep 1
+    hyprctl --instance 0 'dispatch exec hyprlock'
+}
+
 function csv() {
     if [ -z "$1" ]; then
         echo "Usage: csv <file>"
