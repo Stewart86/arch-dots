@@ -15,7 +15,7 @@
  * ----------------------------------------------------- */
 /* @import 'style-light.css'; */
 
-@import '../../../../.cache/wal/colors-waybar.css';
+@import "../../../../.cache/wal/colors-waybar.css";
 @define-color backgroundlight @color8;
 @define-color backgrounddark @color8;
 @define-color workspacesbackground1 @color5;
@@ -38,7 +38,7 @@
 }
 
 window#waybar {
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.5);
   border-bottom: 0px solid #ffffff;
   /* color: #FFFFFF; */
   transition-property: background-color;
