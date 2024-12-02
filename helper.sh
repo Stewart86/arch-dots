@@ -192,8 +192,9 @@ stow_dotfiles() {
 }
 
 install_wallpaper() {
-  mkdir ~/wallpaper
-  cd ~/wallpaper || exit
+  echo "::Installing wallpaper..."
+  mkdir "$HOME"/wallpaper
+  cd "$HOME"/wallpaper || exit
   git clone https://github.com/mylinuxforwork/wallpaper.git
   rm .git LICENSE README.md
 }
