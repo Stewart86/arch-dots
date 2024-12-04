@@ -100,11 +100,11 @@
     "on-click": "~/.config/waybar/themeswitcher.sh",
     "tooltip-format": "Select a waybar theme"
   },
-  // Settings
+  // Waybar Themes
   "custom/settings": {
     "format": "",
-    "on-click": "com.ml4w.dotfilessettings",
-    "tooltip-format": "ML4W Dotfiles Settings"
+    "on-click": "~/.config/waybar/themeswitcher.sh",
+    "tooltip-format": "Select a waybar theme"
   },
   // Keybindings
   "custom/keybindings": {
@@ -266,7 +266,6 @@
     },
     "modules": [
       "custom/settings",
-      "custom/waybarthemes",
       "custom/wallpaper"
     ]
   },
