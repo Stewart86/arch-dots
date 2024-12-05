@@ -23,12 +23,12 @@ fi
 # -----------------------------------------------------
 
 force_generate=0
-generatedversions="$HOME/.config/ml4w/cache/wallpaper-generated"
-waypaperrunning=$HOME/.config/ml4w/cache/waypaper-running
-cachefile="$HOME/.config/ml4w/cache/current_wallpaper"
-blurredwallpaper="$HOME/.config/ml4w/cache/blurred_wallpaper.png"
-squarewallpaper="$HOME/.config/ml4w/cache/square_wallpaper.png"
-rasifile="$HOME/.config/ml4w/cache/current_wallpaper.rasi"
+generatedversions="$HOME/.cache/wallpaper/wallpaper-generated"
+waypaperrunning=$HOME/.cache/wallpaper/waypaper-running
+cachefile="$HOME/.cache/wallpaper/current_wallpaper"
+blurredwallpaper="$HOME/.cache/wallpaper/blurred_wallpaper.png"
+squarewallpaper="$HOME/.cache/wallpaper/square_wallpaper.png"
+rasifile="$HOME/.cache/wallpaper/current_wallpaper.rasi"
 blurfile="$HOME/.config/ml4w/settings/blur.sh"
 defaultwallpaper="$HOME/wallpaper/default.jpg"
 wallpapereffect="$HOME/.config/ml4w/settings/wallpaper-effect.sh"

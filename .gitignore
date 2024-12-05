@@ -1,5 +1,4 @@
 .aws
-.config/ml4w/cache
 .config/waypaper/config.ini
 .config/zshrc/40-bitwarden
 .ssh

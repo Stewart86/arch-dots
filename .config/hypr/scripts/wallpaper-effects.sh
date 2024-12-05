@@ -7,7 +7,7 @@
 #
 
 # Get current wallpaper
-cache_file="$HOME/.config/ml4w/cache/current_wallpaper"
+cache_file="$HOME/.cache/wallpaper/current_wallpaper"
 
 # Open rofi to select the Hyprshade filter for toggle
 options="$(ls ~/.config/hypr/effects/wallpaper/)\noff"
