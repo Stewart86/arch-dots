@@ -1,14 +1,7 @@
 #!/bin/bash
-#  __  __                  _        
-# |  \/  | _____   _____  | |_ ___  
-# | |\/| |/ _ \ \ / / _ \ | __/ _ \ 
-# | |  | | (_) \ V /  __/ | || (_) |
-# |_|  |_|\___/ \_/ \___|  \__\___/ 
-#                                  
 
 # Function to log messages (useful for debugging)
 log_message() {
-    # echo "[$(date '+%Y-%m-%d %H:%M:%S')] $1" >> ~/moveto_log.txt
     echo "[$(date '+%Y-%m-%d %H:%M:%S')] $1"
 }
 
