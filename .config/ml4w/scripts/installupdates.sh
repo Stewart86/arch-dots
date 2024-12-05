@@ -75,4 +75,4 @@ echo
 echo
 
 echo "Press [ENTER] to close."
-read
+read -r
