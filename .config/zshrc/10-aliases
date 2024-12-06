@@ -1,10 +1,3 @@
-# -----------------------------------------------------
-# ALIASES
-# -----------------------------------------------------
-
-# -----------------------------------------------------
-# General
-# -----------------------------------------------------
 alias c='clear'
 alias nf='fastfetch'
 alias pf='fastfetch'
@@ -15,44 +8,35 @@ alias lt='eza -a --tree --level=1 --icons=always'
 alias shutdown='systemctl poweroff'
 alias reboot='systemctl reboot'
 alias sleep='hyprctl dispatch dpms off'
-alias v='$EDITOR'
-alias vi='$EDITOR'
-alias vim='$EDITOR'
-alias ts='~/.config/ml4w/scripts/snapshot.sh'
+alias ts='snapshot.sh'
 alias wifi='nmtui'
 alias cleanup='paru -Scc'
 alias cat='bat'
 
-# -----------------------------------------------------
+# Editor
+alias v='$EDITOR'
+alias vi='$EDITOR'
+alias vim='$EDITOR'
+
 # Git
-# -----------------------------------------------------
 alias gc='git add . && git commit -m'
 alias gp='git push'
 alias gpl='git pull'
 alias lg='lazygit'
 
-# -----------------------------------------------------
 # ML4W Apps
-# -----------------------------------------------------
 alias ml4w='com.ml4w.welcome'
 alias ml4w-settings='com.ml4w.dotfilessettings'
 alias ml4w-hyprland='com.ml4w.hyprland.settings'
-alias ml4w-options='ml4w-hyprland-setup -m options'
 alias sidebar='ags toggle sidebar'
 
-# -----------------------------------------------------
 # linutils
-# -----------------------------------------------------
 alias linux='curl -fsSL https://christitus.com/linux | sh'
 alias linuxdev='curl -fsSL https://christitus.com/linuxdev | sh'
 
-# -----------------------------------------------------
 # Scripts
-# -----------------------------------------------------
-alias ascii='~/.config/ml4w/scripts/figlet.sh'
+alias ascii='figlet.sh'
 
-# -----------------------------------------------------
 # System
-# -----------------------------------------------------
 alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 

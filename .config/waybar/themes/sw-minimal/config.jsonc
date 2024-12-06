@@ -13,9 +13,9 @@
     "format": "   {}",
     "escape": true,
     "return-type": "json",
-    "exec": "~/.config/ml4w/scripts/updates.sh",
+    "exec": "updates.sh",
     "restart-interval": 60,
-    "on-click": "$(cat ~/.config/ml4w/settings/terminal.sh) --class dotfiles-floating -e ~/.config/ml4w/scripts/installupdates.sh",
+    "on-click": "$(cat ~/.config/ml4w/settings/terminal.sh) --class dotfiles-floating -e installupdates.sh",
     "on-click-right": "~/.config/ml4w/settings/software.sh"
   },
   "pulseaudio": {
@@ -33,7 +33,11 @@
       "phone": " ",
       "portable": " ",
       "car": " ",
-      "default": ["", "", ""]
+      "default": [
+        "",
+        "",
+        ""
+      ]
     },
     "on-click": "pamixer -t",
     "on-click-right": "pavucontrol"
@@ -50,7 +54,10 @@
     "group/quicklinks",
     "custom/empty"
   ],
-  "modules-center": ["hyprland/window", "custom/empty"],
+  "modules-center": [
+    "hyprland/window",
+    "custom/empty"
+  ],
   "modules-right": [
     "custom/updates",
     "pulseaudio",
