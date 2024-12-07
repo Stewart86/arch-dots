@@ -30,10 +30,7 @@
     "tooltip-format": "{title}",
     "on-click": "activate",
     "on-click-middle": "close",
-    "ignore-list": [
-      "Alacritty",
-      "kitty"
-    ],
+    "ignore-list": ["Alacritty", "kitty"],
     "app_ids-mapping": {
       "firefoxdeveloperedition": "firefox-developer-edition"
     },
@@ -72,9 +69,9 @@
   // Cliphist
   "custom/cliphist": {
     "format": "",
-    "on-click": "sleep 0.1 && cliphist.sh",
-    "on-click-right": "sleep 0.1 && cliphist.sh d",
-    "on-click-middle": "sleep 0.1 && cliphist.sh w",
+    "on-click": "sleep 0.1 && ~/.local/bin/cliphist.sh",
+    "on-click-right": "sleep 0.1 && ~/.local/bin/cliphist.sh d",
+    "on-click-middle": "sleep 0.1 && ~/.local/bin/cliphist.sh w",
     "tooltip-format": "Clipboard Manager"
   },
   // Updates Count
@@ -264,10 +261,7 @@
       "children-class": "not-memory",
       "transition-left-to-right": true
     },
-    "modules": [
-      "custom/settings",
-      "custom/wallpaper"
-    ]
+    "modules": ["custom/settings", "custom/wallpaper"]
   },
   // Network
   "network": {
@@ -281,7 +275,7 @@
     "tooltip-format-disconnected": "Disconnected",
     "max-length": 50,
     "on-click": "~/.config/ml4w/settings/networkmanager.sh",
-    "on-click-right": "nm-applet.sh toggle"
+    "on-click-right": "~/.local/bin/nm-applet.sh toggle"
   },
   // Battery
   "battery": {
@@ -296,13 +290,7 @@
     "format-alt": "{icon}  {time}",
     // "format-good": "", // An empty format will hide the module
     // "format-full": "",
-    "format-icons": [
-      " ",
-      " ",
-      " ",
-      " ",
-      " "
-    ]
+    "format-icons": [" ", " ", " ", " ", " "]
   },
   // Pulseaudio
   "pulseaudio": {
@@ -320,11 +308,7 @@
       "phone": " ",
       "portable": " ",
       "car": " ",
-      "default": [
-        "",
-        "",
-        ""
-      ]
+      "default": ["", "", ""]
     },
     "on-click": "pavucontrol"
   },
