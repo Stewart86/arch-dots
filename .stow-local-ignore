@@ -4,3 +4,6 @@
 /install.sh
 /setup.sh
 .prettierrc
+.git
+.gitignore
+README.md
