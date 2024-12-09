@@ -13,13 +13,15 @@
     "on-click": "activate",
     "active-only": false,
     "all-outputs": true,
-    "format": "{}",
+    "format": "{icon}",
     "format-icons": {
-      "urgent": "",
-      "active": "",
-      "default": ""
+      "discord": "",
+      "mail": "",
+      "slack": "",
+      "telegram": "",
+      "whatsapp": ""
     },
-    "persistent-workspaces": {
+    "persistent-workpaces": {
       "*": 2
     }
   },
@@ -186,20 +188,32 @@
     "format": "",
     "tooltip": false
   },
+  // Temperature
+  "temperature": {
+    "format": "{icon} {temperatureC}°C ",
+    "on-click": "~/.config/settings/system-monitor.sh",
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
   // CPU
   "cpu": {
-    "format": "/ C {usage}% ",
+    "format": "  {usage}% ",
     "on-click": "~/.config/settings/system-monitor.sh"
   },
   // Memory
   "memory": {
-    "format": "/ M {}% ",
+    "format": "󰘚  {}% ",
     "on-click": "~/.config/settings/system-monitor.sh"
   },
   // Harddisc space used
   "disk": {
     "interval": 30,
-    "format": "D {percentage_used}% ",
+    "format": "󰋊  {percentage_used}% ",
     "path": "/",
     "on-click": "~/.config/settings/system-monitor.sh"
   },
@@ -219,7 +233,7 @@
       "disk",
       "cpu",
       "memory",
-      "hyprland/language",
+      "temperature",
       "network"
     ]
   },

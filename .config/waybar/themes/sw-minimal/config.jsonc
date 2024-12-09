@@ -18,6 +18,12 @@
     "on-click": "kitty --class dotfiles-floating -e installupdates.sh",
     "on-click-right": "kitty --class dotfiles-floating -e pacseek"
   },
+  "custom/weather": {
+    "format": "{}",
+    "escape": true,
+    "exec": "curl -s wttr.in/singapore?format=%c+%t+%m",
+    "restart-interval": 60 // 1 minute
+  },
   "pulseaudio": {
     // "scroll-step": 1, // %, can be a float
     "format": "{icon}   {volume}%",
@@ -65,6 +71,7 @@
     "group/tools",
     "custom/exit",
     "tray",
+    "custom/weather",
     "clock"
   ]
 }
