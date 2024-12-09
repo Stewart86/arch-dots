@@ -94,3 +94,7 @@ function csv() {
     fi
     gum table -p -s, -brounded < "$1" | less -#2 -N -S
 }
+
+function notif_his() {
+    dunstctl history | jq "[.data[] | reverse .[] | {topic: .summary.data, message: .body.data, app: .appname.data, id: .id.data}]"
+}
