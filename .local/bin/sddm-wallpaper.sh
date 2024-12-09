@@ -22,12 +22,12 @@ sddm_theme_name="sequoia"
 sddm_asset_folder="/usr/share/sddm/themes/$sddm_theme_name/backgrounds"
 
 sddm_theme_tpl="/usr/share/ml4w-hyprland/sddm/theme.conf"
-if [ -f $HOME/.config/settings/sddm/theme.conf ]; then
+if [ -f "$HOME/.config/settings/sddm/theme.conf" ]; then
     sddm_theme_tpl="$HOME/.config/settings/sddm/theme.conf"
     echo ":: Using custum theme.conf"
 fi
 
-if [ ! -f $current_wallpaper ]; then
+if [ ! -f "$current_wallpaper" ]; then
     gum spin --spinner dot --title "File $current_wallpaper does not exist" -- sleep 3
     exit
 fi
@@ -43,10 +43,10 @@ fi
 sudo cp /usr/share/ml4w-hyprland/sddm/sddm.conf /etc/sddm.conf.d/
 echo ":: File /etc/sddm.conf.d/sddm.conf updated."
 
-sudo cp $current_wallpaper $sddm_asset_folder/current_wallpaper.$extension
+sudo cp "$current_wallpaper" $sddm_asset_folder/current_wallpaper."$extension"
 echo ":: Current wallpaper copied into $sddm_asset_folder"
 
-sudo cp $sddm_theme_tpl /usr/share/sddm/themes/$sddm_theme_name/
+sudo cp "$sddm_theme_tpl" /usr/share/sddm/themes/$sddm_theme_name/
 sudo sed -i 's/CURRENTWALLPAPER/'"current_wallpaper.$extension"'/' /usr/share/sddm/themes/$sddm_theme_name/theme.conf
 echo ":: File theme.conf updated in /usr/share/sddm/themes/$sddm_theme_name/"
 echo
