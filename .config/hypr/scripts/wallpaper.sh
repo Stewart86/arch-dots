@@ -10,7 +10,7 @@
 # Check to use wallpaper cache
 # -----------------------------------------------------
 
-if [ -f ~/.config/ml4w/settings/wallpaper_cache ]; then
+if [ -f ~/.config/settings/wallpaper_cache ]; then
     use_cache=1
     echo ":: Using Wallpaper Cache"
 else
@@ -29,9 +29,9 @@ cachefile="$HOME/.cache/wallpaper/current_wallpaper"
 blurredwallpaper="$HOME/.cache/wallpaper/blurred_wallpaper.png"
 squarewallpaper="$HOME/.cache/wallpaper/square_wallpaper.png"
 rasifile="$HOME/.cache/wallpaper/current_wallpaper.rasi"
-blurfile="$HOME/.config/ml4w/settings/blur.sh"
+blurfile="$HOME/.config/settings/blur.sh"
 defaultwallpaper="$HOME/wallpaper/default.jpg"
-wallpapereffect="$HOME/.config/ml4w/settings/wallpaper-effect.sh"
+wallpapereffect="$HOME/.config/settings/wallpaper-effect.sh"
 blur="50x30"
 blur=$(cat "$blurfile")
 

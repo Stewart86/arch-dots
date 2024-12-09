@@ -2,14 +2,17 @@
 
 # Define threshholds for color indicators
 threshhold_green=0
-threshhold_yellow=25
+threshhold_yellow=50
 threshhold_red=100
 
 # Calculate available updates
 updates=0
 updates=$((updates + "$(checkupdates 2>/dev/null | wc -l || 0)"))
+sleep 1
 updates=$((updates + "$(paru -Qu --aur --quiet | wc -l || 0)"))
+sleep 1
 updates=$((updates + "$(flatpak remote-ls --updates 2>/dev/null | wc -l || 0)"))
+sleep 1
 
 # Output in JSON format for Waybar Module custom-updates
 css_class="green"

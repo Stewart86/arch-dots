@@ -129,7 +129,7 @@
     // Browser Launcher
     "custom/browser": {
         "format": "",
-        "on-click": "~/.config/ml4w/settings/browser.sh",
+        "on-click": "~/.config/settings/browser.sh",
         "tooltip": false
     },
     // ML4W Welcome App

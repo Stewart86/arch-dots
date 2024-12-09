@@ -17,7 +17,7 @@
     "spacing": 0,
     // Load Modules
     "include": [
-        "~/.config/ml4w/settings/waybar-quicklinks.jsonc",
+        "~/.config/settings/waybar-quicklinks.jsonc",
         "~/.config/waybar/modules.jsonc"
     ],
     // Updates Count
@@ -27,8 +27,8 @@
         "return-type": "json",
         "exec": "updates.sh",
         "restart-interval": 60,
-        "on-click": "$(cat ~/.config/ml4w/settings/terminal.sh) --class dotfiles-floating -e installupdates.sh",
-        "on-click-right": "~/.config/ml4w/settings/software.sh"
+        "on-click": "$kitty --class dotfiles-floating -e installupdates.sh",
+        "on-click-right": "kitty --class dotfiles-floating -e pacseek"
     },
     // Pulseaudio
     "pulseaudio": {
