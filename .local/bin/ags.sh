@@ -1,1 +1,1 @@
-ags run
+uswm app -- ags run
