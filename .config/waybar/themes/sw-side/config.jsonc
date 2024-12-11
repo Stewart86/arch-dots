@@ -1,0 +1,90 @@
+{
+  "layer": "top",
+  "position": "left",
+  "margin-bottom": 0,
+  "margin-left": 0,
+  "margin-right": 0,
+  "spacing": 0,
+  "include": [
+    "~/.config/waybar/modules.jsonc"
+  ],
+  "custom/updates": {
+    "format": "   {}",
+    "escape": true,
+    "return-type": "json",
+    "exec": "~/.local/bin/updates.sh",
+    "restart-interval": 10800, // 3 hours
+    "rotate": 90,
+    "on-click": "kitty --class dotfiles-floating -e installupdates.sh",
+    "on-click-right": "kitty --class dotfiles-floating -e pacseek"
+  },
+  "custom/weather": {
+    "format": "{}",
+    "escape": true,
+    "exec": "curl -s wttr.in/singapore?format=%c+%t+%m",
+    "rotate": 90,
+    "restart-interval": 60 // 1 minute
+  },
+  "hyprland/window": {
+    "rewrite": {
+      "(.*) - Brave": "$1",
+      "(.*) - Chromium": "$1",
+      "(.*) - Brave Search": "$1",
+      "(.*) - Outlook": "$1",
+      "(.*) Microsoft Teams": "$1"
+    },
+    "rotate": 90,
+    "separate-outputs": true
+  },
+  "clock": {
+    "format": "{:%a, %d %b @ %H:%M}",
+    "on-click": "ags toggle calendar",
+    "tooltip": false,
+    "rotate": 90
+  },
+  "pulseaudio": {
+    // "scroll-step": 1, // %, can be a float
+    "format": "{icon}   {volume}%",
+    "format-bluetooth": "{volume}% {icon} {format_source}",
+    "format-bluetooth-muted": " {icon} {format_source}",
+    "format-muted": " {format_source}",
+    "format-source": "",
+    "format-source-muted": "",
+    "format-icons": {
+      "headphone": " ",
+      "hands-free": " ",
+      "headset": " ",
+      "phone": " ",
+      "portable": " ",
+      "car": " ",
+      "default": [
+        "",
+        "",
+        ""
+      ]
+    },
+    "on-click": "pamixer -t",
+    "on-click-right": "pavucontrol",
+    "rotate": 90
+  },
+  "tray": {
+    "icon-size": 14,
+    "spacing": 5
+  },
+  "modules-left": [
+    "custom/appmenuicon",
+    "hyprland/workspaces",
+    "group/settings"
+  ],
+  "modules-center": [
+    "hyprland/window",
+    "custom/empty"
+  ],
+  "modules-right": [
+    "custom/updates",
+    "pulseaudio",
+    "tray",
+    "custom/weather",
+    "clock"
+  ]
+}

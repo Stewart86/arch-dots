@@ -190,7 +190,7 @@
   },
   // Temperature
   "temperature": {
-    "format": "{icon} {temperatureC}°C ",
+    "format": "{icon} {temperatureC}°C",
     "on-click": "~/.config/settings/system-monitor.sh",
     "format-icons": [
       "",
@@ -202,18 +202,18 @@
   },
   // CPU
   "cpu": {
-    "format": "  {usage}% ",
+    "format": "  {usage}%",
     "on-click": "~/.config/settings/system-monitor.sh"
   },
   // Memory
   "memory": {
-    "format": "󰘚  {}% ",
+    "format": "󰘚  {}%",
     "on-click": "~/.config/settings/system-monitor.sh"
   },
   // Harddisc space used
   "disk": {
     "interval": 30,
-    "format": "󰋊  {percentage_used}% ",
+    "format": "󰋊  {percentage_used}%",
     "path": "/",
     "on-click": "~/.config/settings/system-monitor.sh"
   },
@@ -233,7 +233,6 @@
       "disk",
       "cpu",
       "memory",
-      "temperature",
       "network"
     ]
   },

@@ -23,8 +23,8 @@
 @define-color bordercolor #FFFFFF;
 @define-color textcolor1 #000000;
 @define-color textcolor2 #000000;
-@define-color textcolor3  @color15;
-@define-color iconcolor @color15;
+@define-color textcolor3 #FFFFFF;
+@define-color iconcolor #FFFFFF;
 
 /* -----------------------------------------------------
  * General 
@@ -39,28 +39,23 @@
 
 window#waybar {
   background-color: rgba(25, 25, 25, 0.4);
+  border-bottom: 0px solid #ffffff;
+  /* color: #FFFFFF; */
   transition-property: background-color;
   transition-duration: 0.5s;
 }
 
-.modules-left {
-  padding-left: 10px;
-}
-
-/* -----------------------------------------------------
- * Workspaces 
- * ----------------------------------------------------- */
-
 #workspaces {
-  margin: 0px 3px 0px 7px;
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
   border: 0px;
-  font-size: 12px;
+  font-size: 10px;
   color: @textcolor1;
 }
 
 #workspaces button {
   border: 0px;
-  margin: 0px 2px 0px 0px;
+  margin: 0px 0px 0px 0px;
   padding: 0px 5px 0px 5px;
   color: @textcolor3;
   transition: all 0.5s ease-in-out;
@@ -98,9 +93,10 @@ tooltip label {
  * ----------------------------------------------------- */
 
 #window {
-  margin: 0px 15px 0px 0px;
+  margin: 0px 0px 0px 0px;
+  padding: 0px 7px 0px 7px;
   border-radius: 12px;
-  color: @textcolor3;
+  color: @textcolor;
   font-size: 10px;
   font-weight: normal;
   font-family: "FiraCode Nerd Font";
@@ -126,6 +122,11 @@ window#waybar.empty #window {
  * Custom Quicklinks
  * ----------------------------------------------------- */
 
+#custom-weather {
+  margin: 0px 0px 0px 0px;
+  padding: 0px 5px 0px 5px;
+  font-size: 12px;
+}
 #custom-brave,
 #custom-browser,
 #custom-keybindings,
@@ -137,7 +138,6 @@ window#waybar.empty #window {
 #custom-windowsvm,
 #custom-cliphist,
 #custom-wallpaper,
-#custom-weather,
 #custom-settings,
 #custom-wallpaper,
 #custom-system,
@@ -155,22 +155,21 @@ window#waybar.empty #window {
 #custom-quicklink9,
 #custom-quicklink10,
 #custom-waybarthemes {
-  margin-right: 16px;
+  margin: 0px 0px 0px 0px;
+  padding: 5px 4px 0px 0px;
   font-size: 12px;
   font-weight: bold;
   color: @iconcolor;
 }
 
-#custom-tools {
-  margin-right: 12px;
-}
-
+#custom-waybarthemes,
+#custom-system,
+#custom-wallpaper,
+#custom-browser,
+#custom-hypridle,
+#custom-tools,
 #custom-hyprshade {
-  margin-right: 12px;
-}
-
-#custom-hypridle {
-  margin-right: 16px;
+  margin-top: 5px;
 }
 
 #custom-hypridle.active {
@@ -181,36 +180,15 @@ window#waybar.empty #window {
   color: #dc2f2f;
 }
 
-#custom-settings {
-  margin-right: 15px;
-}
-
-#custom-browser {
-  margin-right: 12px;
-}
-
-#custom-wallpaper {
-  margin-right: 14px;
-}
-
-#custom-waybarthemes,
-#custom-system {
-  margin-right: 15px;
-}
-
-/* -----------------------------------------------------
- * Idle Inhibator
- * ----------------------------------------------------- */
-
 #idle_inhibitor {
-  margin-right: 15px;
+  margin-top: 15px;
   font-size: 14px;
   font-weight: bold;
   color: @iconcolor;
 }
 
 #idle_inhibitor.activated {
-  margin-right: 15px;
+  margin-top: 15px;
   font-size: 12px;
   font-weight: bold;
   color: #dc2f2f;
@@ -221,20 +199,10 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 #custom-appmenuicon {
-  font-size: 18px;
-  color: @textcolor3;
-  margin: 0px 15px 0px 0px;
-}
-
-/* -----------------------------------------------------
- * Custom Exit
- * ----------------------------------------------------- */
-
-#custom-exit {
-  margin: 0px 20px 0px 0px;
-  padding: 0px;
-  font-size: 14px;
-  color: @iconcolor;
+  font-size: 10px;
+  padding: 0px 0px 2px 0px;
+  color: @textcolor;
+  margin: 0px 0px 0px 0px;
 }
 
 /* -----------------------------------------------------
@@ -243,9 +211,9 @@ window#waybar.empty #window {
 
 #custom-updates {
   font-size: 12px;
-  color: @textcolor3;
+  color: @textcolor;
   border-radius: 15px;
-  margin: 0px 15px 0px 0px;
+  margin: 15px 0px 0px 0px;
 }
 
 #custom-updates.green {
@@ -260,45 +228,13 @@ window#waybar.empty #window {
 }
 
 /* -----------------------------------------------------
- * Custom Youtube
- * ----------------------------------------------------- */
-
-#custom-youtube {
-  background-color: @backgroundlight;
-  font-size: 12px;
-  color: @textcolor2;
-  border-radius: 15px;
-  margin: 0px 15px 0px 0px;
-}
-
-/* -----------------------------------------------------
- * Hardware Group
- * ----------------------------------------------------- */
-
-#disk,
-#memory,
-#cpu,
-#temperature,
-#network,
-#language {
-  margin: 0px 7px 0px 7px;
-  padding: 0px 2px 0px 2px;
-  font-size: 12px;
-  color: @iconcolor;
-}
-
-#language {
-  margin-right: 10px;
-}
-
-/* -----------------------------------------------------
  * Clock
  * ----------------------------------------------------- */
 
 #clock {
   font-size: 13px;
-  color: @textcolor3;
-  margin: 0px 15px 0px 0px;
+  color: @textcolor;
+  margin: 5px 0px 10px 0px;
 }
 
 /* -----------------------------------------------------
@@ -307,7 +243,7 @@ window#waybar.empty #window {
 
 #backlight {
   font-size: 12px;
-  color: @textcolor3;
+  color: @textcolor;
   border-radius: 15px;
   margin: 0px 15px 0px 0px;
   background-color: transparent;
@@ -319,21 +255,21 @@ window#waybar.empty #window {
 
 #pulseaudio {
   font-size: 12px;
-  color: @textcolor3;
+  color: @textcolor;
   border-radius: 15px;
-  margin: 0px 15px 0px 0px;
+  margin: 5px 0px 0px 0px;
 }
 
 #pulseaudio.muted {
-  color: @textcolor3;
+  color: @textcolor;
 }
 
 #network.ethernet {
-  color: @textcolor3;
+  color: @textcolor;
 }
 
 #network.wifi {
-  color: @textcolor3;
+  color: @textcolor;
 }
 
 /* -----------------------------------------------------
@@ -344,7 +280,7 @@ window#waybar.empty #window {
 #bluetooth.on,
 #bluetooth.connected {
   font-size: 12px;
-  color: @textcolor3;
+  color: @textcolor;
   border-radius: 15px;
   margin: 0px 15px 0px 0px;
 }
@@ -361,14 +297,14 @@ window#waybar.empty #window {
 
 #battery {
   font-size: 12px;
-  color: @textcolor3;
+  color: @textcolor;
   border-radius: 15px;
   margin: 10px 15px 10px 0px;
 }
 
 #battery.charging,
 #battery.plugged {
-  color: @textcolor3;
+  color: @textcolor;
 }
 
 @keyframes blink {
@@ -392,7 +328,7 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 #tray {
-  margin: 0px 10px 0px 0px;
+  margin: 5px 0px 5px 0px;
 }
 
 #tray > .passive {
