@@ -1,16 +1,8 @@
 # -----------------------------------------------------
-# CUSTOMIZATION
+# Customization
 # -----------------------------------------------------
 POSH=agnoster
 
-# -----------------------------------------------------
-# oh-myzsh themes: https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-# -----------------------------------------------------
-# ZSH_THEME=robbyrussell
-
-# -----------------------------------------------------
-# oh-myzsh plugins
-# -----------------------------------------------------
 plugins=(
     archlinux
     aws
@@ -97,4 +89,40 @@ function csv() {
 
 function notif_his() {
     dunstctl history | jq "[.data[] | reverse .[] | {topic: .summary.data, message: .body.data, app: .appname.data, id: .id.data}]"
+}
+
+function ffo() {
+    OPENER='if [[ $FZF_SELECT_COUNT -eq 0 ]]; then
+            nvim {1}     # No selection. Open the current line in Vim.
+          else
+            nvim +cw -q {+f}  # Build quickfix list for the selected items.
+          fi'
+    fzf --ansi --multi \
+        --bind "enter:become:$OPENER" \
+        --bind "ctrl-o:execute:$OPENER" \
+        --bind 'alt-a:select-all,alt-d:deselect-all,ctrl-/:toggle-preview' \
+        --delimiter : \
+        --preview 'bat --style=full --color=always {}' \
+        --preview-window '<80(up)' \
+        --query "$*"
+}
+
+# ripgrep->fzf->vim [QUERY]
+function fwo() {
+    RELOAD="reload:rg --hidden --glob '!.git/' --column --color=always --smart-case {q} || :"
+    OPENER='if [[ $FZF_SELECT_COUNT -eq 0 ]]; then
+                nvim {1} +{2}     # No selection. Open the current line in Vim.
+            else
+                nvim +cw -q {+f}  # Build quickfix list for the selected items.
+            fi'
+    fzf --disabled --ansi --multi \
+        --bind "start:$RELOAD" \
+        --bind "change:$RELOAD" \
+        --bind "enter:become:$OPENER" \
+        --bind "ctrl-o:execute:$OPENER" \
+        --bind 'alt-a:select-all,alt-d:deselect-all,ctrl-/:toggle-preview' \
+        --delimiter : \
+        --preview 'bat --style=full --color=always --highlight-line {2} {1}' \
+        --preview-window '~4,+{2}+4/3,<80(up)' \
+        --query "$*"
 }
