@@ -68,12 +68,12 @@ window#waybar {
 
 #workspaces button.active {
   color: @textcolor1;
-  background: @workspacesbackground2;
+  background: @workspacesbackground1;
 }
 
 #workspaces button:hover {
   color: @textcolor1;
-  background: @workspacesbackground2;
+  background: @workspacesbackground1;
   border-radius: 15px;
 }
 
@@ -231,7 +231,7 @@ window#waybar.empty #window {
  * ----------------------------------------------------- */
 
 #custom-exit {
-  margin: 0px 20px 0px 0px;
+  margin: 0px 15px 0px 0px;
   padding: 0px;
   font-size: 14px;
   color: @iconcolor;
@@ -393,6 +393,19 @@ window#waybar.empty #window {
 
 #tray {
   margin: 0px 10px 0px 0px;
+  background-color: @color2;
+  box-shadow: inset 0px 0px 2px 1px rgba(0, 0, 0, 0.9);
+  border-radius: 5px;
+  border: none;
+  padding: 0px 7px 0px 7px;
+}
+
+#tray menu menuitem:hover {
+  color: @textcolor3;
+}
+
+#tray menu {
+  color: @textcolor3;
 }
 
 #tray > .passive {
