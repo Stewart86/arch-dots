@@ -1,2 +1,2 @@
-send-notify "Welcome back! Unpausing notifications"
+notify-send "Welcome back! Unpausing notifications"
 dunstctl set-paused false
