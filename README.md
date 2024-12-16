@@ -4,7 +4,7 @@
   - [ ] laptop
     - [ ] battery indicator
     - [ ] surface linux kernel
+    - [ ] power profile for laptop
   - [ ] vm without DE
   - [ ] vm with DE
   - [ ] WSL
-- [ ] change to librewolf

@@ -99,7 +99,6 @@ tooltip label {
 
 #window {
   margin: 0px 15px 0px 0px;
-  border-radius: 12px;
   color: @textcolor3;
   font-size: 10px;
   font-weight: normal;
@@ -108,6 +107,22 @@ tooltip label {
 
 window#waybar.empty #window {
   background-color: transparent;
+}
+
+#mpd {
+  margin: 0px 15px 0px 15px;
+  color: @textcolor3;
+  font-size: 10px;
+  font-weight: normal;
+  font-family: "FiraCode Nerd Font";
+}
+
+#custom-cava {
+  margin: 0px 15px 0px 15px;
+  color: @textcolor3;
+  font-size: 10px;
+  font-weight: normal;
+  font-family: "FiraCode Nerd Font";
 }
 
 /* -----------------------------------------------------
@@ -324,6 +339,9 @@ window#waybar.empty #window {
   margin: 0px 15px 0px 0px;
 }
 
+#pulseaudio.source-muted {
+  color: @textcolor3;
+}
 #pulseaudio.muted {
   color: @textcolor3;
 }

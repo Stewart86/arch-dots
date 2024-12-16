@@ -1,6 +1,7 @@
 export packages=(
   "brightnessctl"
   "btop"
+  "cava"
   "eza"
   "fastfetch"
   "fuse2"
@@ -14,6 +15,9 @@ export packages=(
   "kwallet"
   "kwallet-pam"
   "lazygit"
+  "mpd"
+  "mpc"
+  "ncmpcpp"
   "neovim"
   "network-manager-applet"
   "nm-connection-editor"
