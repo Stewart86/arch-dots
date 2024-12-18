@@ -27,7 +27,7 @@ install_packages() {
 
 install_paru() {
   echo "::Installing paru..."
-  pacman -S --needed --noconfirm base-devel git
+  sudo pacman -S --needed --noconfirm base-devel git
 
   if [ ! -d "$HOME"/Downloads ]; then
     mkdir "$HOME"/Downloads
@@ -40,6 +40,13 @@ install_paru() {
   makepkg --noconfirm -si
   cd "$temp_path" || exit
   echo "::paru has been installed successfully."
+}
+
+install_grub_btrfs() {
+  echo "::Installing grub-btrfs..."
+  sudo sed -i "s/\/.snapshots/-t/" /usr/lib/systemd/system/grub-btrfsd.service
+  sudo systemctl start grub-btrfsd.service --now
+  echo "::grub-btrfs has been installed successfully."
 }
 
 install_pnpm() {

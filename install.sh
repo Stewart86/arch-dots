@@ -7,6 +7,8 @@ install_paru
 echo "::Update mirrors..."
 sudo pacman -Syyu
 
+install_grub_btrfs
+
 echo "::Installing Essntial packages..."
 source ./packages/essential.sh
 
