@@ -1,5 +1,4 @@
 export packages=(
-  "aylurs-gtk-shell"
   "bibata-cursor-theme-bin"
   "blueman"
   "brave-bin"
@@ -10,7 +9,6 @@ export packages=(
   "fcitx5-pinyin-moegirl"
   "fcitx5-pinyin-zhwiki"
   "flatpak"
-  "gnome-calculator"
   "gnome-calculator"
   "grimblast-git"
   "gtk4"

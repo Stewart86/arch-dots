@@ -1,1 +1,1 @@
-uswm app -- ags run
+notify-send "Not running AGS"
