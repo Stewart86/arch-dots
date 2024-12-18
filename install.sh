@@ -2,14 +2,17 @@
 
 source ./helper.sh
 
+install_paru
+
+echo "::Update mirrors..."
+sudo pacman -Syyu
+
 echo "::Installing Essntial packages..."
 source ./packages/essential.sh
 
 install_packages "${packages[@]}"
 
 create_snapshot "Pre-installation"
-
-install_paru
 
 echo "::Installing Hyprland packages..."
 source ./packages/hyprland.sh

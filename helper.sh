@@ -1,6 +1,6 @@
 is_installed() {
   package="$1"
-  check="$(sudo pacman -Qs --color always "${package}" | grep "local" | grep "${package} ")"
+  check="$(paru -Qs --color always "${package}" | grep "local" | grep "${package} ")"
   if [ -n "${check}" ]; then
     echo 0
     return #true
@@ -186,6 +186,7 @@ install_oh_my_zsh() {
 
 stow_dotfiles() {
   remove_existing_config
+  rm -rf ~/.config
   echo "::Stowing config..."
   stow -t ~ -d ~/dotfiles/ .
 }
