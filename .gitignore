@@ -2,3 +2,4 @@
 .config/waypaper/config.ini
 .config/zshrc/40-bitwarden
 .ssh
+.config/nvim/lazy-lock.json

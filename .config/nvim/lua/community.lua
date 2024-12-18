@@ -75,6 +75,11 @@ return {
         if copilot.is_visible() then copilot.dismiss() end
       end)
 
+      opts.filetypes = {
+        markdown = true,
+        yaml = true,
+      }
+
       return opts
     end,
   },
