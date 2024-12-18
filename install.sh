@@ -43,8 +43,6 @@ install_packages "${packages[@]}"
 
 create_snapshot "Post-installation"
 
-stow_dotfiles
-
 setup_ufw
 
 create_snapshot "Completed-installation"
@@ -58,6 +56,12 @@ install_fnm
 install_pnpm
 
 install_pyenv
+
+stow_dotfiles
+
+install_wallpaper
+
+cleanup
 
 echo ":: Installation complete."
 echo "rebooting..."
