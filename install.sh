@@ -36,6 +36,10 @@ source ./packages/sddm.sh
 
 install_packages "${packages[@]}"
 
+echo "::Installing SDDM Theme..."
+
+source ./sddm-sequoia/install_theme.sh
+
 enable_sddm
 
 echo "::Installing tools..."
@@ -65,6 +69,8 @@ install_wallpaper
 
 cleanup
 
+echo ":: Creating Hyprland desktop entry..."
+curl https://raw.githubusercontent.com/hyprwm/Hyprland/refs/heads/main/systemd/hyprland-uwsm.desktop >/usr/share/wayland-sessions/hyprland-uwsm.desktop
 echo ":: Installation complete."
 echo "rebooting..."
 sleep 3
