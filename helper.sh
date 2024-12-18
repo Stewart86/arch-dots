@@ -27,7 +27,7 @@ install_packages() {
 
 install_paru() {
   echo "::Installing paru..."
-  sudo pacman -S --needed --noconfirm base-devel git
+  sudo pacman -S --needed --noconfirm base-devel git uwsm
 
   if [ ! -d "$HOME"/Downloads ]; then
     mkdir "$HOME"/Downloads
@@ -193,7 +193,6 @@ install_oh_my_zsh() {
 
 stow_dotfiles() {
   remove_existing_config
-  rm -rf ~/.config
   echo "::Stowing config..."
   stow -t ~ -d ~/dotfiles/ .
 }
