@@ -112,12 +112,11 @@ else
 fi
 
 # -----------------------------------------------------
-# Stop all running waybar instances
+# Stop waybar service
 # -----------------------------------------------------
 
-echo ":: Stop all running waybar instances"
-killall waybar
-pkill waybar
+# echo ":: Stop waybar service"
+# systemctl --user stor waybar.service
 
 # -----------------------------------------------------
 # Execute pywal
@@ -132,7 +131,7 @@ source "$HOME/.cache/wal/colors.sh"
 # Reload Waybar
 # -----------------------------------------------------
 
-~/.config/waybar/launch.sh
+systemctl --user restart waybar.service
 
 # -----------------------------------------------------
 # Pywalfox
