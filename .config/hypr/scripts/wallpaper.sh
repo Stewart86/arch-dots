@@ -35,6 +35,11 @@ wallpapereffect="$HOME/.config/settings/wallpaper-effect.sh"
 blur="50x30"
 blur=$(cat "$blurfile")
 
+# Ensure that the wallpaper directory exists
+if [ ! -d "$HOME/.cache/wallpaper" ]; then
+    mkdir "$HOME/.cache/wallpaper"
+fi
+
 # Ensures that the script only run once if wallpaper effect enabled
 if [ -f "$waypaperrunning" ]; then
     rm "$waypaperrunning"
