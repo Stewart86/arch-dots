@@ -131,7 +131,7 @@ source "$HOME/.cache/wal/colors.sh"
 # Reload Waybar
 # -----------------------------------------------------
 
-systemctl --user restart waybar.service
+killall -SIGUSR2 waybar
 
 # -----------------------------------------------------
 # Pywalfox
