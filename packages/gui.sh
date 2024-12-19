@@ -40,7 +40,6 @@ export packages=(
   "telegram-desktop"
   "waypaper"
   "wf-recorder"
-  "whatscli"
   "wlogout"
   "zapzap"
 )

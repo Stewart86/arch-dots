@@ -1,0 +1,109 @@
+{
+  "layer": "top",
+  "position": "top",
+  "margin-bottom": 0,
+  "margin-left": 0,
+  "margin-right": 0,
+  "spacing": 0,
+  "include": [
+    "~/.config/settings/waybar-quicklinks.jsonc",
+    "~/.config/waybar/modules.jsonc"
+  ],
+  "custom/updates": {
+    "format": "   {}",
+    "escape": true,
+    "return-type": "json",
+    "exec": "~/.local/bin/updates.sh",
+    "restart-interval": 10800, // 3 hours
+    "on-click": "kitty --class dotfiles-floating -e installupdates.sh",
+    "on-click-right": "kitty --class dotfiles-floating -e pacseek"
+  },
+  "custom/weather": {
+    "format": "{}",
+    "escape": true,
+    "exec": "curl -s wttr.in/yishun?format=%c+%t+%m",
+    "restart-interval": 1800,
+    "on-click": "uwsm app -- kitty --class dotfiles-floating -e ~/.local/bin/weather.sh"
+  },
+  "pulseaudio": {
+    // "scroll-step": 1, // %, can be a float
+    "format": "{icon}   {volume}%   {format_source} ",
+    "format-bluetooth": "{volume}%   {icon}   {format_source}",
+    "format-bluetooth-muted": "   {icon}   {format_source}",
+    "format-muted": " {format_source}",
+    "format-source": "",
+    "format-source-muted": "",
+    "format-icons": {
+      "headphone": " ",
+      "hands-free": " ",
+      "headset": " ",
+      "phone": " ",
+      "portable": " ",
+      "car": " ",
+      "default": ["", "", ""]
+    },
+    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+    "on-click-right": "pavucontrol",
+    "on-click-middle": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
+  },
+  "mpd": {
+    "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{filename} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ",
+    "format-disconnected": "Disconnected ",
+    "format-stopped": "",
+    "interval": 10,
+    "consume-icons": {
+      "on": " " // Icon shows only when "consume" is on
+    },
+    "random-icons": {
+      "on": " "
+    },
+    "repeat-icons": {
+      "on": " "
+    },
+    "single-icons": {
+      "on": "1 "
+    },
+    "state-icons": {
+      "paused": "",
+      "playing": ""
+    },
+    "tooltip-format": "MPD (connected)",
+    "tooltip-format-disconnected": "MPD (disconnected)",
+    "on-click-middle": "uwsm app -- kitty --class dotfiles-floating -e ncmpcpp",
+    "on-click": "mpc toggle",
+    "on-click-right": "mpc update; mpc ls | mpc add",
+    "on-scroll-up": "mpc --quiet prev",
+    "on-scroll-down": "mpc --quiet next"
+  },
+  "custom/cava": {
+    "format": "{}",
+    "exec": "uwsm app -- ~/.local/bin/waybar_cava.sh --stb 0",
+    "restart-interval": 1,
+    "hide-empty": true
+  },
+  "tray": {
+    "icon-size": 14,
+    "spacing": 10
+  },
+  "modules-left": [
+    "custom/appmenuicon",
+    "hyprland/workspaces",
+    "group/links",
+    "group/settings",
+    "group/quicklinks",
+    "mpd",
+    "custom/cava",
+    "custom/empty"
+  ],
+  "modules-center": ["hyprland/window", "custom/empty"],
+  "modules-right": [
+    "custom/updates",
+    "pulseaudio",
+    "group/hardware",
+    "group/tools",
+    "custom/exit",
+    "tray",
+    "custom/weather",
+    "clock"
+  ]
+}

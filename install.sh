@@ -26,6 +26,12 @@ source ./packages/gui.sh
 
 install_packages "${packages[@]}"
 
+echo "::Installing fonts..."
+
+source ./packages/fonts.sh
+
+install_packages "${packages[@]}"
+
 echo "::Installing Portal packages..."
 source ./packages/portal.sh
 
