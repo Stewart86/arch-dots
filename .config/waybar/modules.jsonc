@@ -1,50 +1,4 @@
-//  __  __           _       _
-// |  \/  | ___   __| |_   _| | ___  ___
-// | |\/| |/ _ \ / _` | | | | |/ _ \/ __|
-// | |  | | (_) | (_| | |_| | |  __/\__ \
-// |_|  |_|\___/ \__,_|\__,_|_|\___||___/
-//
-//
 {
-  // Workspaces
-  "hyprland/workspaces": {
-    "on-scroll-up": "hyprctl dispatch workspace r-1",
-    "on-scroll-down": "hyprctl dispatch workspace r+1",
-    "on-click": "activate",
-    "active-only": false,
-    "all-outputs": true,
-    "format": "{icon}",
-    "format-icons": {
-      "discord": "",
-      "mail": "",
-      "slack": "",
-      "telegram": "",
-      "whatsapp": ""
-    },
-    "persistent-workpaces": {
-      "*": 2
-    }
-  },
-  // Taskbar
-  "wlr/taskbar": {
-    "format": "{icon}",
-    "icon-size": 18,
-    "tooltip-format": "{title}",
-    "on-click": "activate",
-    "on-click-middle": "close",
-    "ignore-list": [
-      "Alacritty",
-      "kitty"
-    ],
-    "app_ids-mapping": {
-      "firefoxdeveloperedition": "firefox-developer-edition"
-    },
-    "rewrite": {
-      "Firefox Web Browser": "Firefox",
-      "Foot Server": "Terminal"
-    }
-  },
-  // Hyprland Window
   "hyprland/window": {
     "rewrite": {
       "(.*) - Brave": "$1",
@@ -56,88 +10,16 @@
     },
     "separate-outputs": true
   },
-  // ML4W Welcome App
-  "custom/ml4w-welcome": {
-    "on-click": "ags toggle sidebar",
-    "on-click-right": "sleep 0.1 && ~/.config/ml4w/apps/ML4W_Welcome-x86_64.AppImage",
-    "format": " ",
-    "tooltip-format": "Open Sidebar"
-  },
-  // Empty
-  "custom/empty": {
-    "format": ""
-  },
-  // Tools
   "custom/tools": {
     "format": "",
     "tooltip-format": "Tools"
   },
-  // Cliphist
   "custom/cliphist": {
     "format": "",
     "on-click": "sleep 0.1 && ~/.local/bin/cliphist.sh",
     "on-click-right": "sleep 0.1 && ~/.local/bin/cliphist.sh d",
     "on-click-middle": "sleep 0.1 && ~/.local/bin/cliphist.sh w",
     "tooltip-format": "Clipboard Manager"
-  },
-  // Wallpaper
-  "custom/wallpaper": {
-    "format": "",
-    "on-click": "waypaper",
-    "on-click-right": "~/.config/hypr/scripts/wallpaper-effects.sh",
-    "tooltip-format": "Left: Select a wallpaper\nRight: Select wallpaper effect"
-  },
-  // Waybar Themes
-  "custom/waybarthemes": {
-    "format": "",
-    "on-click": "~/.config/waybar/themeswitcher.sh",
-    "tooltip-format": "Select a waybar theme"
-  },
-  // Waybar Themes
-  "custom/settings": {
-    "format": "",
-    "on-click": "~/.config/waybar/themeswitcher.sh",
-    "tooltip-format": "Select a waybar theme"
-  },
-  // Keybindings
-  "custom/keybindings": {
-    "format": "",
-    "on-click": "~/.config/hypr/scripts/keybindings.sh",
-    "tooltip": false
-  },
-  // ChatGPT Launcher
-  "custom/chatgpt": {
-    "format": " ",
-    "on-click": "$BROWSER --new-window https://chat.openai.com",
-    "tooltip-format": "AI Support"
-  },
-  // Calculator
-  "custom/calculator": {
-    "format": "",
-    "on-click": "qalculate-gtk",
-    "tooltip-format": "Open calculator"
-  },
-  // Windows VM
-  "custom/windowsvm": {
-    "format": "",
-    "on-click": "launchvm.sh",
-    "tooltip": false
-  },
-  // Rofi Application Launcher
-  "custom/appmenu": {
-    // START APPS LABEL
-    "format": "Apps",
-    // END APPS LABEL
-    "on-click": "sleep 0.2;pkill rofi || rofi -show drun -replace",
-    "on-click-right": "~/.config/hypr/scripts/keybindings.sh",
-    "tooltip-format": "Left: Open the application launcher\nRight: Show all keybindings"
-  },
-  // Rofi Application Launcher
-  "custom/appmenuicon": {
-    "format": "",
-    "on-click": "sleep 0.2;rofi -show drun -replace",
-    "on-click-right": "~/.config/hypr/scripts/keybindings.sh",
-    "tooltip-format": "Left: Open the application launcher\nRight: Show all keybindings"
   },
   // Power Menu
   "custom/exit": {
@@ -163,55 +45,18 @@
     "on-click": "~/.config/hypr/scripts/hypridle.sh toggle",
     "on-click-right": "hyprlock"
   },
-  // Keyboard State
-  "keyboard-state": {
-    "numlock": true,
-    "capslock": true,
-    "format": "{name} {icon}",
-    "format-icons": {
-      "locked": "",
-      "unlocked": ""
-    }
-  },
-  // System tray
-  "tray": {
-    "icon-size": 21,
-    "spacing": 10
-  },
-  // Clock
-  "clock": {
-    "format": "{:%a, %d %b @ %H:%M}",
-    "on-click": "ags toggle calendar",
-    "tooltip": false
-  },
-  // System
   "custom/system": {
     "format": "",
     "tooltip": false
   },
-  // Temperature
-  "temperature": {
-    "format": "{icon} {temperatureC}°C",
-    "on-click": "~/.config/settings/system-monitor.sh",
-    "format-icons": [
-      "",
-      "",
-      "",
-      "",
-      ""
-    ]
-  },
-  // CPU
   "cpu": {
     "format": "  {usage}%",
     "on-click": "~/.config/settings/system-monitor.sh"
   },
-  // Memory
   "memory": {
     "format": "󰘚  {}%",
     "on-click": "~/.config/settings/system-monitor.sh"
   },
-  // Harddisc space used
   "disk": {
     "interval": 30,
     "format": "󰋊  {percentage_used}%",
@@ -221,7 +66,109 @@
   "hyprland/language": {
     "format": "/ K {short}"
   },
-  // Group Hardware
+  "custom/appmenuicon": {
+    "format": "",
+    "on-click": "sleep 0.2;rofi -show drun -replace",
+    "on-click-right": "~/.config/hypr/scripts/keybindings.sh",
+    "tooltip-format": "Left: Open the application launcher\nRight: Show all keybindings"
+  },
+  "hyprland/workspaces": {
+    "on-scroll-up": "hyprctl dispatch workspace r-1",
+    "on-scroll-down": "hyprctl dispatch workspace r+1",
+    "on-click": "activate",
+    "active-only": false,
+    "all-outputs": true,
+    "format": "{icon}",
+    "format-icons": {
+      "discord": "",
+      "mail": "",
+      "slack": "",
+      "telegram": "",
+      "whatsapp": ""
+    },
+    "persistent-workpaces": {
+      "*": 2
+    }
+  },
+  "custom/updates": {
+    "format": "   {}",
+    "escape": true,
+    "return-type": "json",
+    "exec": "~/.local/bin/updates.sh",
+    "restart-interval": 10800, // 3 hours
+    "on-click": "kitty --class dotfiles-floating -e installupdates.sh",
+    "on-click-right": "kitty --class dotfiles-floating -e pacseek"
+  },
+  "custom/weather": {
+    "format": "{}",
+    "escape": true,
+    "exec": "curl -s wttr.in/yishun?format=%c+%t+%m",
+    "restart-interval": 1800,
+    "on-click": "uwsm app -- kitty --class dotfiles-floating -e ~/.local/bin/weather.sh"
+  },
+  "pulseaudio": {
+    // "scroll-step": 1, // %, can be a float
+    "format": "{icon}   {volume}%   {format_source} ",
+    "format-bluetooth": "{volume}%   {icon}   {format_source}",
+    "format-bluetooth-muted": "   {icon}   {format_source}",
+    "format-muted": " {format_source}",
+    "format-source": "",
+    "format-source-muted": "",
+    "format-icons": {
+      "headphone": " ",
+      "hands-free": " ",
+      "headset": " ",
+      "phone": " ",
+      "portable": " ",
+      "car": " ",
+      "default": [
+        "",
+        "",
+        ""
+      ]
+    },
+    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+    "on-click-right": "pavucontrol",
+    "on-click-middle": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
+  },
+  "mpd": {
+    "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{filename} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ",
+    "format-disconnected": "Disconnected ",
+    "format-stopped": "",
+    "interval": 10,
+    "consume-icons": {
+      "on": " " // Icon shows only when "consume" is on
+    },
+    "random-icons": {
+      "on": " "
+    },
+    "repeat-icons": {
+      "on": " "
+    },
+    "single-icons": {
+      "on": "1 "
+    },
+    "state-icons": {
+      "paused": "",
+      "playing": ""
+    },
+    "tooltip-format": "MPD (connected)",
+    "tooltip-format-disconnected": "MPD (disconnected)",
+    "on-click-middle": "uwsm app -- kitty --class dotfiles-floating -e ncmpcpp",
+    "on-click": "mpc toggle",
+    "on-click-right": "mpc update; mpc ls | mpc add",
+    "on-scroll-up": "mpc --quiet prev",
+    "on-scroll-down": "mpc --quiet next"
+  },
+  "custom/empty": {
+    "format": ""
+  },
+  "custom/cava": {
+    "format": "{}",
+    "exec": "uwsm app -- ~/.local/bin/waybar_cava.sh --stb 0",
+    "restart-interval": 1,
+    "hide-empty": true
+  },
   "group/hardware": {
     "orientation": "inherit",
     "drawer": {
@@ -237,7 +184,6 @@
       "network"
     ]
   },
-  // Group Tools
   "group/tools": {
     "orientation": "inherit",
     "drawer": {
@@ -252,28 +198,32 @@
       "custom/hyprshade"
     ]
   },
-  // Group Links
-  "group/links": {
-    "orientation": "horizontal",
-    "modules": [
-      //"custom/chatgpt",
-      "custom/empty"
-    ]
+  "tray": {
+    "icon-size": 14,
+    "spacing": 10
   },
-  // Group Settings
-  "group/settings": {
-    "orientation": "inherit",
-    "drawer": {
-      "transition-duration": 300,
-      "children-class": "not-memory",
-      "transition-left-to-right": true
+  "clock": {
+    "format": "{:%H:%M}",
+    "format-alt": "{:%a, %d %b   %R}",
+    "tooltip": true,
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "calendar": {
+      "mode": "year",
+      "mode-mon-col": 3,
+      "weeks-pos": "right",
+      "on-scroll": 1,
+      "format": {
+        "months": "<span color='#ffead3'><b>{}</b></span>",
+        "days": "<span color='#ecc6d9'><b>{}</b></span>",
+        "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
+        "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+        "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+      }
     },
-    "modules": [
-      "custom/settings",
-      "custom/wallpaper"
-    ]
+    "actions": {
+      "on-click-right": "mode"
+    }
   },
-  // Network
   "network": {
     "format": "{ifname}",
     "format-wifi": "   {signalStrength}%",
@@ -287,7 +237,6 @@
     "on-click": "~/.config/settings/networkmanager.sh",
     "on-click-right": "~/.local/bin/nm-applet.sh toggle"
   },
-  // Battery
   "battery": {
     "states": {
       // "good": 95,
@@ -308,46 +257,6 @@
       " "
     ]
   },
-  // Pulseaudio
-  "pulseaudio": {
-    // "scroll-step": 1, // %, can be a float
-    "format": "{icon}  {volume}%",
-    "format-bluetooth": "{volume}% {icon} {format_source}",
-    "format-bluetooth-muted": " {icon} {format_source}",
-    "format-muted": " {format_source}",
-    "format-source": "{volume}% ",
-    "format-source-muted": "",
-    "format-icons": {
-      "headphone": " ",
-      "hands-free": " ",
-      "headset": " ",
-      "phone": " ",
-      "portable": " ",
-      "car": " ",
-      "default": [
-        "",
-        "",
-        ""
-      ]
-    },
-    "on-click": "pavucontrol"
-  },
-  // Bluetooth
-  "bluetooth": {
-    "format": " {status}",
-    "format-disabled": "",
-    "format-off": "",
-    "interval": 30,
-    "on-click": "blueman-manager",
-    "format-no-controller": ""
-  },
-  // Other
-  "user": {
-    "format": "{user}",
-    "interval": 60,
-    "icon": false
-  },
-  // backlight:
   "backlight": {
     "format": "{icon} {percent}%",
     "format-icons": [
