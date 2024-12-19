@@ -70,8 +70,17 @@ install_wallpaper
 cleanup
 
 echo ":: Creating Hyprland desktop entry..."
-curl https://raw.githubusercontent.com/hyprwm/Hyprland/refs/heads/main/systemd/hyprland-uwsm.desktop >/usr/share/wayland-sessions/hyprland-uwsm.desktop
+
+curl https://raw.githubusercontent.com/hyprwm/Hyprland/refs/heads/main/systemd/hyprland-uwsm.desktop >hyprland-uwsm.desktop
+
+sudo cp hyprland-uwsm.desktop /usr/share/wayland-sessions/hyprland-uwsm.desktop
+
+rm hyprland-uwsm.desktop
+
 echo ":: Installation complete."
 echo "rebooting..."
+
+pywalfox install --browser librewolf
+
 sleep 3
 systemctl reboot
