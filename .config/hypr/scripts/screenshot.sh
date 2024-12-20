@@ -14,23 +14,11 @@
 # Add this to ~/.config/user-dirs.dirs to save screenshots in a custom folder:
 # XDG_SCREENSHOTS_DIR="$HOME/Screenshots"
 
-prompt='Screenshot'
-mesg="DIR: ~/Screenshots"
-
-# Screenshot Filename
-source ~/.config/settings/screenshot-filename.sh
-
-# Screenshot Folder
-source ~/.config/settings/screenshot-folder.sh
-
 # Screenshot Editor
-export GRIMBLAST_EDITOR="$(cat ~/.config/settings/screenshot-editor.sh)"
-
-# Example for keybindings
-# bind = SUPER, p, exec, grimblast save active
-# bind = SUPER SHIFT, p, exec, grimblast save area
-# bind = SUPER ALT, p, exec, grimblast save output
-# bind = SUPER CTRL, p, exec, grimblast save screen
+screenshots_editor="$(cat ~/.config/settings/screenshot-editor.sh)"
+screenshot_folder="$HOME/Pictures"
+filename="screenshot_$(date +%d%m%Y_%H%M%S).jpg"
+export GRIMBLAST_EDITOR=$screenshots_editor
 
 # Options
 option_1="Immediate"
@@ -46,9 +34,6 @@ option_time_3="20s"
 option_time_4="30s"
 option_time_5="60s"
 #option_time_4="Custom (in seconds)" # Roadmap or someone contribute :)
-
-list_col='1'
-list_row='2'
 
 copy='Copy'
 save='Save'
@@ -82,19 +67,14 @@ timer_run() {
     selected_timer="$(timer_exit)"
     if [[ "$selected_timer" == "$option_time_1" ]]; then
         countdown=5
-        ${1}
     elif [[ "$selected_timer" == "$option_time_2" ]]; then
         countdown=10
-        ${1}
     elif [[ "$selected_timer" == "$option_time_3" ]]; then
         countdown=20
-        ${1}
     elif [[ "$selected_timer" == "$option_time_4" ]]; then
         countdown=30
-        ${1}
     elif [[ "$selected_timer" == "$option_time_5" ]]; then
         countdown=60
-        ${1}
     else
         exit
     fi
@@ -110,7 +90,7 @@ type_screenshot_cmd() {
 
 # Ask for confirmation
 type_screenshot_exit() {
-    echo -e "$option_capture_1\n$option_capture_2\n$option_capture_3" | type_screenshot_cmd
+    echo -e "$option_capture_3\n$option_capture_1\n$option_capture_2" | type_screenshot_cmd
 }
 
 # Confirm and execute
@@ -118,13 +98,10 @@ type_screenshot_run() {
     selected_type_screenshot="$(type_screenshot_exit)"
     if [[ "$selected_type_screenshot" == "$option_capture_1" ]]; then
         option_type_screenshot=screen
-        ${1}
     elif [[ "$selected_type_screenshot" == "$option_capture_2" ]]; then
         option_type_screenshot=output
-        ${1}
     elif [[ "$selected_type_screenshot" == "$option_capture_3" ]]; then
         option_type_screenshot=area
-        ${1}
     else
         exit
     fi
@@ -140,7 +117,7 @@ copy_save_editor_cmd() {
 
 # Ask for confirmation
 copy_save_editor_exit() {
-    echo -e "$copy\n$save\n$copy_save\n$edit" | copy_save_editor_cmd
+    echo -e "$copy\n$edit\n$save\n$copy_save" | copy_save_editor_cmd
 }
 
 # Confirm and execute
@@ -181,10 +158,10 @@ timer() {
 # take shots
 takescreenshot() {
     sleep 1
-    grimblast --notify "$option_chosen" "$option_type_screenshot" $NAME
-    if [ -f $HOME/$NAME ]; then
-        if [ -d $screenshot_folder ]; then
-            mv $HOME/$NAME $screenshot_folder/
+    grimblast --notify "$option_chosen" "$option_type_screenshot" "$filename"
+    if [ -f "$HOME"/"$filename" ]; then
+        if [ -d "$screenshot_folder" ]; then
+            mv "$HOME/$filename" "$screenshot_folder"/
         fi
     fi
 }
@@ -192,10 +169,10 @@ takescreenshot() {
 takescreenshot_timer() {
     sleep 1
     timer
-    grimblast --notify "$option_chosen" "$option_type_screenshot" $NAME
-    if [ -f $HOME/$NAME ]; then
-        if [ -d $screenshot_folder ]; then
-            mv $HOME/$NAME $screenshot_folder/
+    grimblast --notify "$option_chosen" "$option_type_screenshot" "$filename"
+    if [ -f "$HOME/$filename" ]; then
+        if [ -d "$screenshot_folder" ]; then
+            mv "$HOME/$filename" "$screenshot_folder"/
         fi
     fi
 }
@@ -215,10 +192,10 @@ run_cmd() {
 # Actions
 chosen="$(run_rofi)"
 case ${chosen} in
-$option_1)
+"$option_1")
     run_cmd --opt1
     ;;
-$option_2)
+"$option_2")
     run_cmd --opt2
     ;;
 esac

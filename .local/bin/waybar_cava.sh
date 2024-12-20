@@ -1,11 +1,4 @@
 #!/bin/env bash
-#----- Optimized bars animation without much CPU usage increase --------
-#----- Optimized bars animation without much CPU usage increase pt2 --------
-
-# Default values
-scrDir="$(dirname "$(realpath "$0")")"
-# shellcheck disable=SC1091
-source "${scrDir}/globalcontrol.sh"
 
 usage() {
   cat <<HELP

@@ -51,17 +51,17 @@
   },
   "cpu": {
     "format": "  {usage}%",
-    "on-click": "~/.config/settings/system-monitor.sh"
+    "on-click": "kitty --class dotfiles-floating -e btop"
   },
   "memory": {
     "format": "󰘚  {}%",
-    "on-click": "~/.config/settings/system-monitor.sh"
+    "on-click": "kitty --class dotfiles-floating -e btop"
   },
   "disk": {
     "interval": 30,
     "format": "󰋊  {percentage_used}%",
     "path": "/",
-    "on-click": "~/.config/settings/system-monitor.sh"
+    "on-click": "kitty --class dotfiles-floating -e btop"
   },
   "hyprland/language": {
     "format": "/ K {short}"
@@ -121,11 +121,7 @@
       "phone": " ",
       "portable": " ",
       "car": " ",
-      "default": [
-        "",
-        "",
-        ""
-      ]
+      "default": ["", "", ""]
     },
     "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
     "on-click-right": "pavucontrol",
@@ -176,13 +172,7 @@
       "children-class": "not-memory",
       "transition-left-to-right": false
     },
-    "modules": [
-      "custom/system",
-      "disk",
-      "cpu",
-      "memory",
-      "network"
-    ]
+    "modules": ["custom/system", "disk", "cpu", "memory", "network"]
   },
   "group/tools": {
     "orientation": "inherit",
@@ -234,7 +224,7 @@
     "tooltip-format-ethernet": " {ifname}\nIP: {ipaddr}\n up: {bandwidthUpBits} down: {bandwidthDownBits}",
     "tooltip-format-disconnected": "Disconnected",
     "max-length": 50,
-    "on-click": "~/.config/settings/networkmanager.sh",
+    "on-click": "kitty --class dotfiles-floating -e nmtui",
     "on-click-right": "~/.local/bin/nm-applet.sh toggle"
   },
   "battery": {
@@ -249,13 +239,7 @@
     "format-alt": "{icon}  {time}",
     // "format-good": "", // An empty format will hide the module
     // "format-full": "",
-    "format-icons": [
-      " ",
-      " ",
-      " ",
-      " ",
-      " "
-    ]
+    "format-icons": [" ", " ", " ", " ", " "]
   },
   "backlight": {
     "format": "{icon} {percent}%",

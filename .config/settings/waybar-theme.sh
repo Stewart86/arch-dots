@@ -1,1 +1,0 @@
-/sw-minimal;/sw-minimal
