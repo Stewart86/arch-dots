@@ -19,14 +19,14 @@
  * ----------------------------------------------------- */
 
 * {
-  font-family: "Fira Sans semibold", "FiraCode Nerd Font", FontAwesome, Roboto,
-    Helvetica, Arial, sans-serif;
+  font-family: "Fira Code Nerd Font", FontAwesome, Roboto, Helvetica, Arial,
+    sans-serif;
   border: none;
   border-radius: 0px;
 }
 
 window#waybar {
-  background-color: rgba(25, 25, 25, 0.4);
+  background-color: rgba(25, 25, 25, 0.2);
   transition-property: background-color;
   transition-duration: 0.5s;
 }
@@ -40,9 +40,10 @@ window#waybar {
  * ----------------------------------------------------- */
 
 #workspaces {
-  margin: 0px 3px 0px 7px;
-  border: 0px;
+  margin: 0px 7px 0px 7px;
+  padding: 0px 0px 0px 0px;
   font-size: 12px;
+  font-family: "Fira Sans semibold";
   color: @textcolor1;
 }
 
@@ -95,10 +96,12 @@ tooltip label {
 
 window#waybar.empty #window {
   background-color: transparent;
+  font-weight: normal;
+  font-family: "FiraCode Nerd Font";
 }
 
 #mpd {
-  margin: 0px 15px 0px 15px;
+  margin: 0px 15px 0px 0px;
   color: @textcolor3;
   font-size: 10px;
   font-weight: normal;
@@ -106,11 +109,10 @@ window#waybar.empty #window {
 }
 
 #custom-cava {
-  margin: 0px 15px 0px 15px;
+  margin: 0px 15px 0px 0px;
   color: @textcolor3;
   font-size: 10px;
   font-weight: normal;
-  font-family: "FiraCode Nerd Font";
 }
 
 /* -----------------------------------------------------
@@ -234,6 +236,7 @@ window#waybar.empty #window {
 
 #custom-updates {
   font-size: 12px;
+  font-family: "Fira Sans semibold";
   color: @textcolor3;
   border-radius: 15px;
   margin: 0px 15px 0px 0px;
@@ -310,6 +313,7 @@ window#waybar.empty #window {
 
 #pulseaudio {
   font-size: 12px;
+  font-family: "Fira Sans semibold";
   color: @textcolor3;
   border-radius: 15px;
   margin: 0px 15px 0px 0px;
@@ -409,4 +413,8 @@ window#waybar.empty #window {
 #tray > .needs-attention {
   -gtk-icon-effect: highlight;
   background-color: #eb4d4b;
+}
+
+#clock {
+  font-family: "Fira Sans semibold";
 }

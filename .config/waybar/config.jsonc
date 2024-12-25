@@ -5,7 +5,9 @@
   "margin-left": 0,
   "margin-right": 0,
   "spacing": 0,
-  "include": ["~/.config/waybar/modules.jsonc"],
+  "include": [
+    "~/.config/waybar/modules.jsonc"
+  ],
   "modules-left": [
     "custom/appmenuicon",
     "hyprland/workspaces",
@@ -13,13 +15,14 @@
     "custom/cava",
     "custom/empty"
   ],
-  "modules-center": ["hyprland/window", "custom/empty"],
+  "modules-center": [
+    "hyprland/window",
+    "custom/empty"
+  ],
   "modules-right": [
     "custom/updates",
     "pulseaudio",
     "group/hardware",
-    "group/tools",
-    "custom/exit",
     "tray",
     "custom/weather",
     "clock"
