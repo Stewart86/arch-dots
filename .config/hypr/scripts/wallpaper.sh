@@ -102,20 +102,18 @@ fi
 # Created blurred wallpaper
 # -----------------------------------------------------
 
-if [ -f "$generatedversions"/blur-"$blur"-"$effect"-"$wallpaperfilename".png ] && [ "$force_generate" == "0" ] && [ "$use_cache" == "1" ]; then
-    echo ":: Use cached wallpaper blur-$blur-$effect-$wallpaperfilename"
+if [ -f "$generatedversions/blur-$blur-$wallpaperfilename.png" ] && [ "$force_generate" == "0" ] && [ "$use_cache" == "1" ]; then
+    echo ":: Use cached wallpaper blur-$blur-$wallpaperfilename"
 else
-    echo ":: Generate new cached wallpaper blur-$blur-$effect-$wallpaperfilename with blur $blur"
+    echo ":: Generate new cached wallpaper blur-$blur-$wallpaperfilename with blur $blur"
     dunstify "Generate new blurred version" "with blur $blur" -h int:value:66 -h string:x-dunst-stack-tag:wallpaper
     magick "$used_wallpaper" -resize 75% "$blurredwallpaper"
     echo ":: Resized to 75%"
-    if [ ! "$blur" == "0x0" ]; then
-        magick "$blurredwallpaper" -blur "$blur" "$blurredwallpaper"
-        cp "$blurredwallpaper" "$generatedversions"/blur-"$blur"-"$effect"-"$wallpaperfilename".png
-        echo ":: Blurred"
-    fi
+    magick "$blurredwallpaper" -blur "$blur" "$blurredwallpaper"
+    cp "$blurredwallpaper" "$generatedversions/blur-$blur-$wallpaperfilename.png"
+    echo ":: Blurred"
 fi
-cp "$generatedversions"/blur-"$blur"-"$effect"-"$wallpaperfilename".png "$blurredwallpaper"
+cp "$generatedversions/blur-$blur-$wallpaperfilename.png" "$blurredwallpaper"
 
 # -----------------------------------------------------
 # Create rasi file
