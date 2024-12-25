@@ -104,7 +104,7 @@
     "escape": true,
     "exec": "curl -s wttr.in/yishun?format=%c+%t+%m",
     "restart-interval": 1800,
-    "on-click": "uwsm app -- kitty --class dotfiles-floating -e ~/.local/bin/weather.sh"
+    "on-click": "uwsm app -s a -t service -- kitty --class dotfiles-floating -e ~/.local/bin/weather.sh"
   },
   "pulseaudio": {
     // "scroll-step": 1, // %, can be a float
@@ -150,7 +150,7 @@
     },
     "tooltip-format": "MPD (connected)",
     "tooltip-format-disconnected": "MPD (disconnected)",
-    "on-click-middle": "uwsm app -- kitty --class dotfiles-floating -e ncmpcpp",
+    "on-click-middle": "uwsm app -s a -t service -- kitty --class dotfiles-floating -e ncmpcpp",
     "on-click": "mpc toggle",
     "on-click-right": "mpc update; mpc ls | mpc add",
     "on-scroll-up": "mpc --quiet prev",
@@ -161,8 +161,7 @@
   },
   "custom/cava": {
     "format": "{}",
-    "exec": "uwsm app -- ~/.local/bin/waybar_cava.sh --stb 0",
-    "restart-interval": 1,
+    "exec": "uwsm app -s a  -t scope -- ~/.local/bin/waybar_cava.sh --stb 0",
     "hide-empty": true
   },
   "group/hardware": {
