@@ -49,12 +49,13 @@ if [[ $(_isInstalledAUR "timeshift") == "0" ]]; then
     echo
 fi
 
-$aur_helper
+$aur_helper --skipreview -Syu --noconfirm
 
 if [[ $(_isInstalledAUR "flatpak") == "0" ]]; then
     flatpak upgrade
 fi
 
+pnpm self-update
 pnpm -g update
 
 pyenv update
