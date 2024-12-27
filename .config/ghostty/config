@@ -1,4 +1,10 @@
 window-decoration = false
 background-opacity = 0.6
 font-size = 9
-font-family = "FiraCode Nerd Font"
+background = #000000
+gtk-single-instance = true
+window-padding-balance = true
+minimum-contrast = 1.2
+
+keybind = ctrl+shift+k=scroll_page_up
+keybind = ctrl+shift+j=scroll_page_down
