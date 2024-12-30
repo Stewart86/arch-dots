@@ -1,10 +1,20 @@
-window-decoration = false
+macos-option-as-alt = true
+
+font-size = 11.5
+font-family = JetBrains Mono
+font-feature = ss20 
+font-feature = ss02 
+font-feature = ss01 
+font-thicken = true
+bold-is-bright = true
+
 background-opacity = 0.6
-font-size = 9
-background = #000000
-gtk-single-instance = true
+window-decoration = false
 window-padding-balance = true
-minimum-contrast = 1.2
+
+gtk-single-instance = true
 
 keybind = ctrl+shift+k=scroll_page_up
 keybind = ctrl+shift+j=scroll_page_down
+
+theme = /home/siwei/.cache/wal/ghostty.theme
