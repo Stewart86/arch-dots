@@ -51,17 +51,17 @@
   },
   "cpu": {
     "format": "  {usage}%",
-    "on-click": "uwsm app -s a -t service -- ghostty --class=dotfiles.floating -e btop"
+    "on-click": "uwsm app -s a -t service -- kitty --class=dotfiles.floating -e btop"
   },
   "memory": {
     "format": "󰘚  {}%",
-    "on-click": "uwsm app -s a -t service -- ghostty --class=dotfiles.floating -e btop"
+    "on-click": "uwsm app -s a -t service -- kitty --class=dotfiles.floating -e btop"
   },
   "disk": {
     "interval": 30,
     "format": "󰋊  {percentage_used}%",
     "path": "/",
-    "on-click": "uwsm app -s a -t service -- ghostty --class=dotfiles.floating -e btop"
+    "on-click": "uwsm app -s a -t service -- kitty --class=dotfiles.floating -e btop"
   },
   "hyprland/language": {
     "format": "/ K {short}"
@@ -96,15 +96,15 @@
     "return-type": "json",
     "exec": "~/.local/bin/updates.sh",
     "restart-interval": 10800, // 3 hours
-    "on-click": "uwsm app -s a -t service -- ghostty --class=dotfiles.floating -e ~/.local/bin/installupdates.sh",
-    "on-click-right": "uwsm app -s a -t service -- ghostty --class=dotfiles.floating -e pacseek"
+    "on-click": "uwsm app -s a -t service -- kitty --class=dotfiles.floating -e ~/.local/bin/installupdates.sh",
+    "on-click-right": "uwsm app -s a -t service -- kitty --class=dotfiles.floating -e pacseek"
   },
   "custom/weather": {
     "format": "{}",
     "escape": true,
     "exec": "curl -s wttr.in/yishun?format=%c+%t+%m",
     "restart-interval": 1800,
-    "on-click": "uwsm app -s a -t service -- ghostty --class=dotfiles.floating -e ~/.local/bin/weather.sh"
+    "on-click": "uwsm app -s a -t service -- kitty --class=dotfiles.floating -e ~/.local/bin/weather.sh"
   },
   "pulseaudio": {
     // "scroll-step": 1, // %, can be a float
@@ -154,7 +154,7 @@
     },
     "tooltip-format": "MPD (connected)",
     "tooltip-format-disconnected": "MPD (disconnected)",
-    "on-click-middle": "uwsm app -s a -t service -- ghostty --class=dotfiles.floating -e ncmpcpp",
+    "on-click-middle": "uwsm app -s a -t service -- kitty --class=dotfiles.floating -e ncmpcpp",
     "on-click": "mpc toggle",
     "on-click-right": "mpc update; mpc ls | mpc add",
     "on-scroll-up": "mpc --quiet prev",
@@ -233,7 +233,7 @@
     "tooltip-format-ethernet": " {ifname}\nIP: {ipaddr}\n up: {bandwidthUpBits} down: {bandwidthDownBits}",
     "tooltip-format-disconnected": "Disconnected",
     "max-length": 50,
-    "on-click": "uwsm app -s a -t service -- ghostty --class=dotfiles.floating -e nmtui",
+    "on-click": "uwsm app -s a -t service -- kitty --class=dotfiles.floating -e nmtui",
     "on-click-right": "~/.local/bin/nm-applet.sh toggle"
   },
   "battery": {

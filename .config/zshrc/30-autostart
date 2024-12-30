@@ -11,7 +11,7 @@
 # Fastfetch
 # -----------------------------------------------------
 if [[ $(tty) == *"pts"* ]]; then
-    fastfetch --config examples/13
+    fastfetch --config examples/21
 else
     echo
     echo "Start Hyprland with command Hyprland"
