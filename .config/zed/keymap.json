@@ -1,0 +1,92 @@
+[
+    {
+        "context": "Editor && (vim_mode == normal || vim_mode == visual) && !VimWaiting && !menu",
+        "bindings": {
+            "space": null,
+            "space w": "workspace::Save",
+            "space f w": "workspace::NewSearch",
+            "space f o": "file_finder::Toggle",
+            "space f f": "file_finder::Toggle",
+            "space q": "pane::CloseActiveItem",
+            "space Q": "zed::Quit",
+            "space t h": "workspace::NewTerminal",
+            "space u h": "editor::ToggleInlayHints"
+        }
+    },
+    {
+        "context": "Editor && vim_mode == normal && !VimWaiting && !menu",
+        "bindings": {
+            "space l a": "editor::ToggleCodeActions",
+            "space l R": "editor::Rename"
+        }
+    },
+    {
+        "context": "Editor && vim_mode == visual && !VimWaiting && !menu",
+        "bindings": {
+            "space /": "editor::ToggleComments"
+        }
+    },
+    {
+        "context": "Editor && vim_mode == insert",
+        "bindings": {
+            "j k": ["workspace::SendKeystrokes", "escape"],
+            "ctrl-k": "editor::ContextMenuPrev",
+            "ctrl-j": "editor::ContextMenuNext"
+        }
+    },
+    {
+        "context": "ProjectPanel || CollabPanel || OutlinePanel || ChatPanel || VimControl || EmptyPane || SharedScreen || MarkdownPreview || KeyContextView",
+        "bindings": {
+            "space c": "pane::CloseAllItems",
+            "space e": "workspace::ToggleLeftDock",
+            "space o": "workspace::ToggleLeftDock",
+            "space f p": "projects::OpenRecent",
+
+            // Navigate between panes
+            "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
+            "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
+            "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
+            "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"],
+
+            // Resize pane
+            "ctrl-shift-l": ["vim::ResizePane", "Widen"],
+            "ctrl-shift-h": ["vim::ResizePane", "Narrow"],
+            "ctrl-shift-j": ["vim::ResizePane", "Shorten"],
+            "ctrl-shift-k": ["vim::ResizePane", "Lengthen"],
+
+            // Split pane
+            "|": "pane::SplitVertical",
+            "\\": "pane::SplitHorizontal",
+
+            // Tab
+            "shift-l": "pane::ActivateNextItem",
+            "shift-h": "pane::ActivatePrevItem"
+        }
+    },
+    {
+        "context": "Terminal",
+        "bindings": {
+            "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
+            "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"]
+        }
+    },
+    {
+        "context": "ProjectPanel && not_editing",
+        "bindings": {
+            "a": "project_panel::NewFile",
+            "A": "project_panel::NewDirectory",
+            "r": "project_panel::Rename",
+            "d": "project_panel::Delete",
+            "x": "project_panel::Cut",
+            "c": "project_panel::Copy",
+            "p": "project_panel::Paste"
+        }
+    },
+    {
+        "context": "Picker || menu",
+        "bindings": {
+            "K": "menu::SelectPrev",
+            "J": "menu::SelectNext"
+        }
+    }
+]
