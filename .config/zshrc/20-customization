@@ -126,3 +126,14 @@ function fwo() {
         --preview-window '~4,+{2}+4/3,<80(up)' \
         --query "$*"
 }
+
+function spell() {
+    local word
+    if [ -n "$1" ]; then
+        word=$(cat "$HOME/Documents/words.txt" | fzf --height 30% --layout reverse --border --query "$1" | sed 's/[[:space:]]//g')
+    else
+        word=$(cat "$HOME/Documents/words.txt" | fzf --height 30% --layout reverse --border | sed 's/[[:space:]]//g')
+    fi
+    echo "'$word' copied to clipboard"
+    wl-copy $word
+}

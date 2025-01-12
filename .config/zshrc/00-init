@@ -15,3 +15,32 @@ eval "$(zoxide init zsh --cmd cd)"
 # Temporary fix for Python requests module for httpie v3.2.3
 # to try without this after version upgrade
 export REQUESTS_CA_BUNDLE="/etc/ssl/certs/ca-bundle.crt"
+
+# -----------------------------------------------------
+# pyenv
+# -----------------------------------------------------
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
+# -----------------------------------------------------
+# pnpm
+# -----------------------------------------------------
+export PNPM_HOME="$HOME/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+
+# -----------------------------------------------------
+# fnm
+# -----------------------------------------------------
+FNM_PATH="$HOME/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="$HOME/.local/share/fnm:$PATH"
+  eval "`fnm env`"
+fi
+
+export PATH="/home/siwei/.local/bin:$PATH"
+export PATH="/home/siwei/.cache/.bun/bin:$PATH"

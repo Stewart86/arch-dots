@@ -17,18 +17,13 @@ alias cat='bat'
 alias v='$EDITOR'
 alias vi='$EDITOR'
 alias vim='$EDITOR'
+alias zed='zeditor'
 
 # Git
 alias gc='git add . && git commit -m'
 alias gp='git push'
 alias gpl='git pull'
 alias lg='lazygit'
-
-# ML4W Apps
-alias ml4w='com.ml4w.welcome'
-alias ml4w-settings='com.ml4w.dotfilessettings'
-alias ml4w-hyprland='com.ml4w.hyprland.settings'
-alias sidebar='ags toggle sidebar'
 
 # linutils
 alias linux='curl -fsSL https://christitus.com/linux | sh'
@@ -39,4 +34,3 @@ alias ascii='figlet.sh'
 
 # System
 alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
-
