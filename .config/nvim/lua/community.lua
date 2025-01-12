@@ -11,6 +11,8 @@ return {
   { import = "astrocommunity.pack.fish" },
   { import = "astrocommunity.pack.bash" },
   { import = "astrocommunity.pack.rust" },
+  { import = "astrocommunity.pack.typescript" },
+  { import = "astrocommunity.pack.tailwindcss" },
   -- { import = "astrocommunity.markdown-and-latex.markview-nvim" },
 
   { import = "astrocommunity.lsp.lsp-lens-nvim" },
