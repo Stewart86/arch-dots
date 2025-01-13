@@ -4,26 +4,22 @@
         "bindings": {
             "space": null,
             "space w": "workspace::Save",
-            "space f w": "workspace::NewSearch",
-            "space f o": "file_finder::Toggle",
-            "space f f": "file_finder::Toggle",
-            "space q": "pane::CloseActiveItem",
-            "space Q": "zed::Quit",
-            "space t h": "workspace::NewTerminal",
-            "space u h": "editor::ToggleInlayHints"
+            "space W": "workspace::SaveAll"
         }
     },
     {
         "context": "Editor && vim_mode == normal && !VimWaiting && !menu",
         "bindings": {
             "space l a": "editor::ToggleCodeActions",
-            "space l R": "editor::Rename"
+            "space l R": "editor::Rename",
+            "space l r": "editor::FindAllReferences"
         }
     },
     {
         "context": "Editor && vim_mode == visual && !VimWaiting && !menu",
         "bindings": {
-            "space /": "editor::ToggleComments"
+            "space /": "editor::ToggleComments",
+            "space s": "editor::SortLinesCaseSensitive"
         }
     },
     {
@@ -37,11 +33,19 @@
     {
         "context": "ProjectPanel || CollabPanel || OutlinePanel || ChatPanel || VimControl || EmptyPane || SharedScreen || MarkdownPreview || KeyContextView",
         "bindings": {
-            "space c": "pane::CloseAllItems",
+            "space C": "pane::CloseAllItems",
+            "space Q": "zed::Quit",
+            "space c": "pane::CloseActiveItem",
             "space e": "workspace::ToggleLeftDock",
-            "space o": "workspace::ToggleLeftDock",
+            "space f f": "file_finder::Toggle",
+            "space f o": "file_finder::Toggle",
             "space f p": "projects::OpenRecent",
             "space g g": ["task::Spawn", { "task_name": "lazygit", "target": "center" }],
+            "space f w": "workspace::NewSearch",
+            "space o": "workspace::ToggleLeftDock",
+            "space q": "pane::CloseActiveItem",
+            "space t h": "workspace::NewTerminal",
+            "space u h": "editor::ToggleInlayHints",
 
             // Navigate between panes
             "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
