@@ -15,8 +15,8 @@
     },
     "assistant": {
         "default_model": {
-            "provider": "openai",
-            "model": "gpt-4o-mini"
+            "provider": "copilot_chat",
+            "model": "o1-mini"
         },
         "version": "2"
     },
@@ -24,7 +24,7 @@
     "relative_line_numbers": true,
     "use_multiline_find": true,
     "vertical_scroll_margin": 20,
-    "ui_font_size": 14,
+    "ui_font_size": 15,
     "buffer_font_size": 13,
     "theme": {
         "mode": "system",
@@ -42,6 +42,13 @@
     "inlay_hints": {
         "enabled": true
     },
+
+    "git": {
+        "inline_blame": {
+            "enabled": true,
+            "show_commit_summary": true
+        }
+    },
     "preferred_line_length": 160,
     "tab_size": 4,
     "lsp": {
@@ -57,23 +64,23 @@
                     "inlayHints": {
                         "parameterNames": {
                             "enabled": "all",
-                            "suppressWhenArgumentMatchesName": false
+                            "suppressWhenArgumentMatchesName": true
                         },
                         "parameterTypes": {
                             "enabled": true
                         },
                         "variableTypes": {
-                            "enabled": true,
+                            "enabled": false,
                             "suppressWhenTypeMatchesName": true
                         },
                         "propertyDeclarationTypes": {
-                            "enabled": true
+                            "enabled": false
                         },
                         "functionLikeReturnTypes": {
-                            "enabled": true
+                            "enabled": false
                         },
                         "enumMemberValues": {
-                            "enabled": true
+                            "enabled": false
                         }
                     }
                 },

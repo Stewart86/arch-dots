@@ -41,6 +41,7 @@
             "space e": "workspace::ToggleLeftDock",
             "space o": "workspace::ToggleLeftDock",
             "space f p": "projects::OpenRecent",
+            "space g g": ["task::Spawn", { "task_name": "lazygit", "target": "center" }],
 
             // Navigate between panes
             "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
