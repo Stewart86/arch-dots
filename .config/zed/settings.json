@@ -29,7 +29,7 @@
     "theme": {
         "mode": "system",
         "light": "One Light",
-        "dark": "Tokyo Night"
+        "dark": "Gruvbox Dark Hard"
     },
     "tab_bar": {
         "show": true,

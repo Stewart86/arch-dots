@@ -12,14 +12,24 @@
         "bindings": {
             "space l a": "editor::ToggleCodeActions",
             "space l R": "editor::Rename",
-            "space l r": "editor::FindAllReferences"
+            "space l r": "editor::FindAllReferences",
+
+            "space m k": "editor::AddSelectionAbove", // Insert Cursor Above
+            "space m j": "editor::AddSelectionBelow", // Insert Cursor Below
+            "space [": "editor::SelectLargerSyntaxNode", // Expand Selection
+            "space ]": "editor::SelectSmallerSyntaxNode", // Shrink Selection
+            "space m m": "editor::SelectAllMatches", // Select all occurrences of current selection
+            "space m l": ["editor::SelectNext", { "replace_newest": false }], // Add selection to Next Find Match
+            "space m h": ["editor::SelectPrevious", { "replace_newest": false }]
         }
     },
     {
         "context": "Editor && vim_mode == visual && !VimWaiting && !menu",
         "bindings": {
             "space /": "editor::ToggleComments",
-            "space s": "editor::SortLinesCaseSensitive"
+            "space s": "editor::SortLinesCaseSensitive",
+            "space j": "editor::MoveLineDown",
+            "space k": "editor::MoveLineUp"
         }
     },
     {
@@ -40,12 +50,12 @@
             "space f f": "file_finder::Toggle",
             "space f o": "file_finder::Toggle",
             "space f p": "projects::OpenRecent",
-            "space g g": ["task::Spawn", { "task_name": "lazygit", "target": "center" }],
             "space f w": "workspace::NewSearch",
-            "space o": "workspace::ToggleLeftDock",
+            "space o": "pane::RevealInProjectPanel",
             "space q": "pane::CloseActiveItem",
             "space t h": "workspace::NewTerminal",
             "space u h": "editor::ToggleInlayHints",
+            "space g g": ["task::Spawn", { "task_name": "lazygit", "target": "center" }],
 
             // Navigate between panes
             "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
@@ -84,7 +94,8 @@
             "d": "project_panel::Delete",
             "x": "project_panel::Cut",
             "c": "project_panel::Copy",
-            "p": "project_panel::Paste"
+            "p": "project_panel::Paste",
+            "l": ["workspace::SendKeystrokes", "enter space e"]
         }
     },
     {
