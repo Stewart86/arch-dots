@@ -58,6 +58,7 @@
             "space t h": "workspace::NewTerminal",
             "space u h": "editor::ToggleInlayHints",
             "space g g": ["task::Spawn", { "task_name": "lazygit", "target": "center" }],
+            "space g c": ["task::Spawn", { "task_name": "git commit", "target": "center" }],
 
             // Navigate between panes
             "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
