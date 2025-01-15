@@ -12,6 +12,7 @@ alias ts='snapshot.sh'
 alias wifi='nmtui'
 alias cleanup='paru -Scc'
 alias cat='bat'
+alias webcam='qv4l2'
 
 # Editor
 alias v='$EDITOR'

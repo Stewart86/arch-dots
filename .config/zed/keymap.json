@@ -52,6 +52,8 @@
             "space f p": "projects::OpenRecent",
             "space f w": "workspace::NewSearch",
             "space o": "pane::RevealInProjectPanel",
+            "space r o": "workspace::ToggleRightDock",
+            "space b o": "workspace::ToggleBottomDock",
             "space q": "pane::CloseActiveItem",
             "space t h": "workspace::NewTerminal",
             "space u h": "editor::ToggleInlayHints",
