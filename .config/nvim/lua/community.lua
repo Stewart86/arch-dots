@@ -2,6 +2,7 @@
 return {
   "AstroNvim/astrocommunity",
   { import = "astrocommunity.colorscheme.tokyonight-nvim" },
+  { import = "astrocommunity.colorscheme.gruvbox-baby" },
   { import = "astrocommunity.color.transparent-nvim" },
   { import = "astrocommunity.search.nvim-spectre" },
 
@@ -16,12 +17,16 @@ return {
   -- { import = "astrocommunity.markdown-and-latex.markview-nvim" },
 
   { import = "astrocommunity.lsp.lsp-lens-nvim" },
-  { import = "astrocommunity.recipes.telescope-lsp-mappings" },
+  --  { import = "astrocommunity.recipes.telescope-lsp-mappings" },
+  { import = "astrocommunity.recipes.heirline-vscode-winbar" },
 
+  { import = "astrocommunity.media.image-nvim" },
   { import = "astrocommunity.motion.nvim-surround" },
 
   { import = "astrocommunity.editing-support.todo-comments-nvim" },
   { import = "astrocommunity.editing-support.nvim-treesitter-context" },
+  -- { import = "astrocommunity.fuzzy-finder.telescope-zoxide" },
+  { import = "astrocommunity.fuzzy-finder.fzf-lua" },
 
   { import = "astrocommunity.git.git-blame-nvim" },
   { import = "astrocommunity.terminal-integration.flatten-nvim" },

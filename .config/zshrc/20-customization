@@ -137,3 +137,7 @@ function spell() {
     echo "'$word' copied to clipboard"
     wl-copy $word
 }
+
+function calc() {
+    gnome-calculator -s "$*"
+}

@@ -1,0 +1,38 @@
+return {
+  "neo-tree.nvim",
+  opts = {
+    close_if_lastt_window = true,
+    group_empty_dirs = true,
+    use_image_nvim = true,
+    filesystem = {
+      filtered_items = {
+        hide_dotfiles = false,
+        hide_gitignore = true,
+        hide_by_pattern = {
+          "**/.git",
+          "**/.svn",
+          "**/.hg",
+          "**/CVS",
+          "**/.DS_Store",
+          "**/Thumbs.db",
+          "**/.classpath",
+          "**/.settings",
+          "**/out",
+          "**/dist",
+          "**/.husky",
+          "**/.turbo",
+          "**/.next",
+          "**/.storybook",
+          "**/.tap",
+          "**/.nyc_output",
+          "**/report",
+          "**/node_modules",
+          "**/.vercel",
+          "next-env.d.ts",
+          "tsconfig.tsbuildinfo",
+          "tsconfig.*.tsbuildinfo",
+        },
+      },
+    },
+  },
+}

@@ -7,6 +7,9 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+    "features": {
+        "edit_prediction_provider": "zed"
+    },
     "buffer_font_family": "JetBrains Mono",
     "buffer_font_features": {
         "ss01": true,
@@ -16,7 +19,7 @@
     "assistant": {
         "default_model": {
             "provider": "copilot_chat",
-            "model": "o1-mini"
+            "model": "claude-3-5-sonnet"
         },
         "version": "2"
     },
