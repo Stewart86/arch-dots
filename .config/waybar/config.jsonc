@@ -5,20 +5,16 @@
   "margin-left": 0,
   "margin-right": 0,
   "spacing": 0,
-  "include": [
-    "~/.config/waybar/modules.jsonc"
-  ],
+  "output": ["DP-4", "DP-6"],
+  "include": ["~/.config/waybar/modules.jsonc"],
   "modules-left": [
     "custom/appmenuicon",
-    "hyprland/workspaces",
-    "mpd",
-    "custom/cava",
-    "custom/empty"
+    "hyprland/workspaces"
+    // "mpd",
+    // "custom/cava",
+    // "custom/empty",
   ],
-  "modules-center": [
-    "hyprland/window",
-    "custom/empty"
-  ],
+  "modules-center": ["hyprland/window"],
   "modules-right": [
     "custom/updates",
     "pulseaudio",

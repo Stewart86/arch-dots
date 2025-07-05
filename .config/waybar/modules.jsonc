@@ -86,6 +86,7 @@
       "telegram": "",
       "whatsapp": ""
     },
+    "ignore-workspaces": ["grimblastVD"],
     "persistent-workpaces": {
       "*": 2
     }

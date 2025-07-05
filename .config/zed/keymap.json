@@ -36,12 +36,21 @@
         "context": "Editor && vim_mode == insert",
         "bindings": {
             "j k": ["workspace::SendKeystrokes", "escape"],
-            "ctrl-k": "editor::ContextMenuPrev",
+            "ctrl-k": "editor::ContextMenuPrevious",
             "ctrl-j": "editor::ContextMenuNext"
         }
     },
     {
-        "context": "ProjectPanel || CollabPanel || OutlinePanel || ChatPanel || VimControl || EmptyPane || SharedScreen || MarkdownPreview || KeyContextView",
+        "context": "Editor",
+        "bindings": {
+            "ctrl-h": "workspace::ActivatePaneLeft",
+            "ctrl-l": "workspace::ActivatePaneRight",
+            "ctrl-k": "workspace::ActivatePaneUp",
+            "ctrl-j": "workspace::ActivatePaneDown"
+        }
+    },
+    {
+        "context": "ProjectPanel || GitPanel || CollabPanel || OutlinePanel || ChatPanel || VimControl || EmptyPane || SharedScreen || MarkdownPreview || KeyContextView",
         "bindings": {
             "space C": "pane::CloseAllItems",
             "space Q": "zed::Quit",
@@ -61,16 +70,16 @@
             "space g c": ["task::Spawn", { "task_name": "git commit", "target": "center" }],
 
             // Navigate between panes
-            "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
-            "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
-            "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
-            "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"],
+            "ctrl-h": "workspace::ActivatePaneLeft",
+            "ctrl-l": "workspace::ActivatePaneRight",
+            "ctrl-k": "workspace::ActivatePaneUp",
+            "ctrl-j": "workspace::ActivatePaneDown",
 
             // Resize pane
-            "ctrl-shift-l": ["vim::ResizePane", "Widen"],
-            "ctrl-shift-h": ["vim::ResizePane", "Narrow"],
-            "ctrl-shift-j": ["vim::ResizePane", "Shorten"],
-            "ctrl-shift-k": ["vim::ResizePane", "Lengthen"],
+            "ctrl-shift-l": "vim::ResizePaneRight",
+            "ctrl-shift-h": "vim::ResizePaneLeft",
+            "ctrl-shift-j": "vim::ResizePaneDown",
+            "ctrl-shift-k": "vim::ResizePaneUp",
 
             // Split pane
             "|": "pane::SplitVertical",
@@ -78,14 +87,14 @@
 
             // Tab
             "shift-l": "pane::ActivateNextItem",
-            "shift-h": "pane::ActivatePrevItem"
+            "shift-h": "pane::ActivatePreviousItem"
         }
     },
     {
         "context": "Terminal",
         "bindings": {
-            "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
-            "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"]
+            "ctrl-k": "workspace::ActivatePaneUp",
+            "ctrl-h": "workspace::ActivatePaneLeft"
         }
     },
     {
@@ -104,7 +113,7 @@
     {
         "context": "Picker || menu",
         "bindings": {
-            "K": "menu::SelectPrev",
+            "K": "menu::SelectPrevious",
             "J": "menu::SelectNext"
         }
     }

@@ -18,7 +18,9 @@ alias webcam='qv4l2'
 alias v='$EDITOR'
 alias vi='$EDITOR'
 alias vim='$EDITOR'
-alias zed='zeditor'
+
+alias cl='claude'
+alias oc='opencode'
 
 # Git
 alias gc='git add . && git commit -m'
