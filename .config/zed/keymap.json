@@ -1,5 +1,23 @@
 [
     {
+        "context": "Editor && (showing_code_actions || showing_completions)",
+        "bindings": {
+            "shift-k": "editor::ContextMenuPrevious",
+            "shift-j": "editor::ContextMenuNext",
+            "ctrl-k": "editor::ContextMenuPrevious",
+            "ctrl-j": "editor::ContextMenuNext",
+            "pageup": "editor::ContextMenuFirst",
+            "pagedown": "editor::ContextMenuLast"
+        }
+    },
+    {
+        "context": "VimControl && !menu && vim_mode == normal",
+        "bindings": {
+            "n": "search::SelectNextMatch",
+            "N": "search::SelectPreviousMatch"
+        }
+    },
+    {
         "context": "Editor && (vim_mode == normal || vim_mode == visual) && !VimWaiting && !menu",
         "bindings": {
             "space": null,
@@ -35,18 +53,7 @@
     {
         "context": "Editor && vim_mode == insert",
         "bindings": {
-            "j k": ["workspace::SendKeystrokes", "escape"],
-            "ctrl-k": "editor::ContextMenuPrevious",
-            "ctrl-j": "editor::ContextMenuNext"
-        }
-    },
-    {
-        "context": "Editor",
-        "bindings": {
-            "ctrl-h": "workspace::ActivatePaneLeft",
-            "ctrl-l": "workspace::ActivatePaneRight",
-            "ctrl-k": "workspace::ActivatePaneUp",
-            "ctrl-j": "workspace::ActivatePaneDown"
+            "j k": ["workspace::SendKeystrokes", "escape"]
         }
     },
     {
@@ -72,8 +79,6 @@
             // Navigate between panes
             "ctrl-h": "workspace::ActivatePaneLeft",
             "ctrl-l": "workspace::ActivatePaneRight",
-            "ctrl-k": "workspace::ActivatePaneUp",
-            "ctrl-j": "workspace::ActivatePaneDown",
 
             // Resize pane
             "ctrl-shift-l": "vim::ResizePaneRight",
@@ -111,10 +116,26 @@
         }
     },
     {
-        "context": "Picker || menu",
+        "context": "Picker",
         "bindings": {
             "K": "menu::SelectPrevious",
             "J": "menu::SelectNext"
+        }
+    },
+    {
+        "context": "FileFinder",
+        "bindings": {
+            "ctrl-k": "menu::SelectPrevious",
+            "ctrl-l": "menu::SelectNext"
+        }
+    },
+    {
+        "context": "Editor && !Picker && vim_mode != insert",
+        "bindings": {
+            "ctrl-h": "workspace::ActivatePaneLeft",
+            "ctrl-l": "workspace::ActivatePaneRight",
+            "ctrl-k": "workspace::ActivatePaneUp",
+            "ctrl-j": "workspace::ActivatePaneDown"
         }
     }
 ]

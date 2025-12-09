@@ -1,6 +1,6 @@
 macos-option-as-alt = true
 
-font-size = 11.5
+font-size = 9
 font-family = JetBrains Mono
 font-feature = ss20 
 font-feature = ss02 
@@ -13,8 +13,11 @@ window-decoration = false
 window-padding-balance = true
 
 gtk-single-instance = true
+quit-after-last-window-closed = true
 
 keybind = ctrl+shift+k=scroll_page_up
 keybind = ctrl+shift+j=scroll_page_down
+keybind = shift+enter=text:\n
+keybind = global:ctrl+grave_accent=toggle_quick_terminal
 
 theme = /home/siwei/.cache/wal/ghostty.theme

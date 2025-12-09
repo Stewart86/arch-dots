@@ -29,7 +29,7 @@ _needs_restart() {
             return 0
         fi
     fi
-    
+
     # Check if critical packages need restart (only if they exist and were recently updated)
     if [ -f /var/log/pacman.log ]; then
         today=$(date +%Y-%m-%d)
@@ -37,7 +37,7 @@ _needs_restart() {
             return 0
         fi
     fi
-    
+
     return 1
 }
 
@@ -95,7 +95,7 @@ fi
 
 if _command_exists npm; then
     echo ":: Updating npm packages..."
-    sudo npm update -g
+    npm update -g
 fi
 
 if _command_exists pnpm; then
@@ -138,8 +138,6 @@ notify-send "Update complete"
 echo
 echo ":: Update complete"
 echo
-
-~/.local/bin/cleanup_timeshift.sh
 
 if _needs_restart; then
     echo

@@ -22,7 +22,7 @@ _command_exists() {
 
 _is_safe_package() {
     local package="$1"
-    
+
     # Critical packages to exclude from auto-update
     local critical_packages=(
         "linux"
@@ -76,14 +76,14 @@ _is_safe_package() {
         "paru"
         "yay"
     )
-    
+
     # Check if package matches any critical package pattern
     for critical in "${critical_packages[@]}"; do
         if [[ "$package" == *"$critical"* ]]; then
             return 1 # Not safe
         fi
     done
-    
+
     return 0 # Safe
 }
 
@@ -92,11 +92,11 @@ _get_safe_updates() {
     local updates=$($aur_helper -Qu 2>/dev/null)
     local safe_updates=()
     local excluded_updates=()
-    
+
     if [ -z "$updates" ]; then
         return 0
     fi
-    
+
     # Filter out critical packages
     while IFS= read -r line; do
         if [ -n "$line" ]; then
@@ -107,25 +107,25 @@ _get_safe_updates() {
                 excluded_updates+=("$package")
             fi
         fi
-    done <<< "$updates"
-    
+    done <<<"$updates"
+
     # Store safe updates for later use
     echo "${safe_updates[@]}"
 }
 
 _show_update_summary() {
     echo ":: Checking for safe package updates..."
-    
+
     # Get list of packages that can be updated
     local updates=$($aur_helper -Qu 2>/dev/null)
     local safe_updates=()
     local excluded_updates=()
-    
+
     if [ -z "$updates" ]; then
         echo ":: No system package updates available"
         return 0
     fi
-    
+
     # Filter out critical packages
     while IFS= read -r line; do
         if [ -n "$line" ]; then
@@ -136,20 +136,20 @@ _show_update_summary() {
                 excluded_updates+=("$package")
             fi
         fi
-    done <<< "$updates"
-    
+    done <<<"$updates"
+
     # Show what will be updated and what's excluded
     if [ ${#safe_updates[@]} -gt 0 ]; then
         echo ":: Safe packages to update (${#safe_updates[@]}):"
         printf "   %s\n" "${safe_updates[@]}"
     fi
-    
+
     if [ ${#excluded_updates[@]} -gt 0 ]; then
         echo ":: Critical packages excluded from auto-update (${#excluded_updates[@]}):"
         printf "   %s\n" "${excluded_updates[@]}"
         echo ":: Run installupdates.sh manually to update these packages"
     fi
-    
+
     echo
 }
 
@@ -170,7 +170,7 @@ safe_updates_list=($(_get_safe_updates))
 # Create snapshot before updates
 if [[ $(_isInstalledAUR "timeshift") == "0" ]]; then
     echo ":: Creating pre-update snapshot..."
-    
+
     if [ ${#safe_updates_list[@]} -gt 0 ]; then
         # Create brief comment with first few package names
         comment_packages=""
@@ -181,11 +181,11 @@ if [[ $(_isInstalledAUR "timeshift") == "0" ]]; then
                 comment_packages="$comment_packages, $i"
             fi
         done
-        
+
         if [ ${#safe_updates_list[@]} -gt 5 ]; then
             comment_packages="$comment_packages, ..."
         fi
-        
+
         snapshot_comment="Auto-update: ${#safe_updates_list[@]} packages ($comment_packages)"
         sudo timeshift --create --comments "$snapshot_comment"
         echo ":: Snapshot created: $snapshot_comment"
@@ -272,12 +272,6 @@ echo ":: Console will remain open for your review"
 echo ":: Press Ctrl+C or close terminal when done"
 echo
 
-# Cleanup old snapshots
-if [[ $(_isInstalledAUR "timeshift") == "0" ]]; then
-    ~/.local/bin/cleanup_timeshift.sh
-fi
-
-# Keep terminal open indefinitely
-while true; do
-    sleep 1
-done
+echo
+echo "Press [ENTER] to close."
+read -r

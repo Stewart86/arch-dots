@@ -1,9 +1,9 @@
-#            _              
-#    _______| |__  _ __ ___ 
+#            _
+#    _______| |__  _ __ ___
 #   |_  / __| '_ \| '__/ __|
-#  _ / /\__ \ | | | | | (__ 
+#  _ / /\__ \ | | | | | (__
 # (_)___|___/_| |_|_|  \___|
-#                           
+#
 # -----------------------------------------------------
 # ML4W zshrc loader
 # -----------------------------------------------------
@@ -11,18 +11,18 @@
 # DON'T CHANGE THIS FILE
 
 # You can define your custom configuration by adding
-# files in ~/.config/zshrc 
+# files in ~/.config/zshrc
 # or by creating a folder ~/.config/zshrc/custom
-# with copies of files from ~/.config/zshrc 
+# with copies of files from ~/.config/zshrc
 # -----------------------------------------------------
 
 # -----------------------------------------------------
 # Load modular configarion
 # -----------------------------------------------------
 
-for f in ~/.config/zshrc/*; do 
-    if [ ! -d $f ] ;then
-        c=`echo $f | sed -e "s=.config/zshrc=.config/zshrc/custom="`
+for f in ~/.config/zshrc/*; do
+    if [ ! -d $f ]; then
+        c=$(echo $f | sed -e "s=.config/zshrc=.config/zshrc/custom=")
         [[ -f $c ]] && source $c || source $f
     fi
 done
@@ -31,12 +31,6 @@ done
 # Load single customization file (if exists)
 # -----------------------------------------------------
 
-if [ -f ~/.zshrc_custom ] ;then
+if [ -f ~/.zshrc_custom ]; then
     source ~/.zshrc_custom
 fi
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/siwei/google-cloud-sdk/path.zsh.inc' ]; then . '/home/siwei/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/home/siwei/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/siwei/google-cloud-sdk/completion.zsh.inc'; fi

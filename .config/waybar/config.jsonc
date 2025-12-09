@@ -5,11 +5,10 @@
   "margin-left": 0,
   "margin-right": 0,
   "spacing": 0,
-  "output": ["DP-4", "DP-6"],
   "include": ["~/.config/waybar/modules.jsonc"],
   "modules-left": [
-    "custom/appmenuicon",
     "hyprland/workspaces"
+    // "custom/appmenuicon",
     // "mpd",
     // "custom/cava",
     // "custom/empty",
@@ -18,7 +17,8 @@
   "modules-right": [
     "custom/updates",
     "pulseaudio",
-    "group/hardware",
+    "pulseaudio/slider",
+    // "group/hardware",
     "tray",
     "custom/weather",
     "clock"
