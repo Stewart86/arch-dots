@@ -4,3 +4,6 @@
 .ssh
 .config/nvim/lazy-lock.json
 .config/gtk-3.0/bookmarks
+
+# End-4 managed (recreated by update-dots.sh)
+.config/hypr/hyprland/
