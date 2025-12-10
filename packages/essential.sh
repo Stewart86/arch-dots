@@ -24,7 +24,7 @@ export packages=(
   "sed"
   "tldr"
   "unzip"
-  "uwsm"
+
   "vim"
   "wget"
   "xdg-user-dirs"

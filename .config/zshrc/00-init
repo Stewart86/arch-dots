@@ -53,3 +53,7 @@ if [ -f '/home/siwei/google-cloud-sdk/path.zsh.inc' ]; then . '/home/siwei/googl
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/siwei/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/siwei/google-cloud-sdk/completion.zsh.inc'; fi
+
+if test -f ~/.local/state/quickshell/user/generated/terminal/sequences.txt; then
+    cat ~/.local/state/quickshell/user/generated/terminal/sequences.txt
+fi

@@ -77,16 +77,10 @@ cleanup
 
 echo ":: Creating Hyprland desktop entry if doesn't exist..."
 
-if [ ! -f /usr/share/wayland-sessions/hyprland-uwsm.desktop ]; then
-  curl https://raw.githubusercontent.com/hyprwm/Hyprland/refs/heads/main/systemd/hyprland-uwsm.desktop >hyprland-uwsm.desktop
-  sudo cp hyprland-uwsm.desktop /usr/share/wayland-sessions/hyprland-uwsm.desktop
-  rm hyprland-uwsm.desktop
-fi
+
 
 echo ":: Installation complete."
 echo "rebooting..."
-
-pywalfox install --browser librewolf
 
 sleep 3
 systemctl reboot

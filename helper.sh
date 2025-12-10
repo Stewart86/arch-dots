@@ -27,7 +27,7 @@ install_packages() {
 
 install_paru() {
   echo "::Installing paru..."
-  sudo pacman -S --needed --noconfirm base-devel git uwsm
+  sudo pacman -S --needed --noconfirm base-devel git
 
   if [ ! -d "$HOME"/Downloads ]; then
     mkdir "$HOME"/Downloads
